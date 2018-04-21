@@ -194,6 +194,7 @@ bot.on('message', function (event) {
 						altText: '說明',
 						template: {
 						type: 'buttons',
+						text: 'Please select',
 						actions: [{
 						  type: 'postback',
 						  label: 'Buy',
