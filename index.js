@@ -113,7 +113,8 @@ bot.on('message', function (event) {
 						}
 					});
 				*/
-					event.reply({
+					event.reply([
+					{
 						type: 'template',
 						altText: '選單',
 						template: {
@@ -138,7 +139,83 @@ bot.on('message', function (event) {
 							text: '運動新聞'
 						}]
 						}
-					});
+					},
+					{
+						type: 'template',
+						altText: '選單2',
+						template: {
+						type: 'buttons',
+						text: '請選擇主題',
+						actions: [{
+							type: 'message',
+							label: '汽車',
+							text: '綜藝新聞'
+						}, {
+							type: 'message',
+							label: '電影',
+							text: '科技新聞'
+						}, {
+							type: 'message',
+							label: '動漫',
+							text: '動漫新聞'
+						}, {
+							type: 'message',
+							label: '遊戲',
+							text: '遊戲新聞'
+						}]
+						}
+					},
+					{
+						type: 'template',
+						altText: '選單3',
+						template: {
+						type: 'buttons',
+						text: '請選擇主題',
+						actions: [{
+							type: 'message',
+							label: '美妝',
+							text: '美妝新聞'
+						}, {
+							type: 'message',
+							label: '旅遊',
+							text: '旅遊新聞'
+						}, {
+							type: 'message',
+							label: '金融',
+							text: '金融新聞'
+						}, {
+							type: 'message',
+							label: '運動',
+							text: '運動新聞'
+						}]
+						}
+					},
+					{
+						type: 'template',
+						altText: '選單4',
+						template: {
+						type: 'buttons',
+						text: '請選擇主題',
+						actions: [{
+							type: 'message',
+							label: '美妝',
+							text: '美妝新聞'
+						}, {
+							type: 'message',
+							label: '旅遊',
+							text: '旅遊新聞'
+						}, {
+							type: 'message',
+							label: '金融',
+							text: '金融新聞'
+						}, {
+							type: 'message',
+							label: '運動',
+							text: '運動新聞'
+						}]
+						}
+					},
+					]);
 					break;
 				case 't1':
 					event.reply({
@@ -270,7 +347,7 @@ bot.on('message', function (event) {
 					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方選項' },
 					{
 						type: 'template',
-						altText: '說明',
+						altText: '選項',
 						template: {
 						type: 'buttons',
 						text: '選項',
