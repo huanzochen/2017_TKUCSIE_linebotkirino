@@ -188,7 +188,7 @@ bot.on('message', function (event) {
 				default: 
 					event.reply([
 					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
-					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' }
+					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' },
 					{
 						type: 'template',
 						altText: '公告',
