@@ -110,42 +110,42 @@ bot.on('message', function (event) {
 						type: 'template',
 						altText: 'this is a carousel template',
 						template: {
-						type: 'carousel',
-						columns: [{
-						thumbnailImageUrl: 'https://example.com/bot/images/item1.jpg',
-						title: 'this is menu',
-						text: 'description',
-						actions: [{
-						type: 'postback',
-						label: 'Buy',
-						data: 'action=buy&itemid=111'
-						}, {
-						type: 'postback',
-						label: 'Add to cart',
-						data: 'action=add&itemid=111'
-						}, {
-						type: 'uri',
-						label: 'View detail',
-						uri: 'http://example.com/page/111'
-						}]
-						}, {
-						thumbnailImageUrl: 'https://example.com/bot/images/item2.jpg',
-						title: 'this is menu',
-						text: 'description',
-						actions: [{
-						type: 'postback',
-						label: 'Buy',
-						data: 'action=buy&itemid=222'
-						}, {
-						type: 'postback',
-						label: 'Add to cart',
-						data: 'action=add&itemid=222'
-						}, {
-						type: 'uri',
-						label: 'View detail',
-						uri: 'http://example.com/page/222'
-						}]
-						}]
+							type: 'carousel',
+							columns: [{
+								thumbnailImageUrl: 'https://example.com/bot/images/item1.jpg',
+								title: 'this is menu',
+								text: 'description',
+								actions: [{
+								type: 'postback',
+								label: 'Buy',
+								data: 'action=buy&itemid=111'
+								}, {
+								type: 'postback',
+								label: 'Add to cart',
+								data: 'action=add&itemid=111'
+								}, {
+								type: 'uri',
+								label: 'View detail',
+								uri: 'http://example.com/page/111'
+								}]
+							}, {
+								thumbnailImageUrl: 'https://example.com/bot/images/item2.jpg',
+								title: 'this is menu',
+								text: 'description',
+								actions: [{
+								type: 'postback',
+								label: 'Buy',
+								data: 'action=buy&itemid=222'
+								}, {
+								type: 'postback',
+								label: 'Add to cart',
+								data: 'action=add&itemid=222'
+								}, {
+								type: 'uri',
+								label: 'View detail',
+								uri: 'http://example.com/page/222'
+								}]
+							}]
 						}
 					});
 					break;
@@ -192,24 +192,42 @@ bot.on('message', function (event) {
 					{
 						type: 'template',
 						altText: '說明',
+						text: 'Please select',
 						template: {
-						type: 'buttons',
-						actions: [{
-							type: 'message',
-							label: '選單',
-							text: '選單'
-						}, {
-							type: 'message',
-							label: '關於我們',
-							text: '關於我們'
-						}, {
-							type: 'message',
-							label: 't1',
-							text: 't1'
-						}]
+							type: 'buttons',
+							actions: [{
+								type: 'message',
+								label: '選單',
+								text: '選單'
+							}, {
+								type: 'message',
+								label: '關於我們',
+								text: '關於我們'
+							}, {
+								type: 'message',
+								label: 't1',
+								text: 't1'
+							}]
 						}
 					}
 					]);
+					event.reply({
+						type: 'template',
+						altText: 'this is a confirm template',
+						template: {
+						type: 'confirm',
+						text: 'Are you sure?',
+						actions: [{
+						type: 'message',
+						label: 'Yes',
+						text: 'yes'
+						}, {
+						type: 'message',
+						label: 'No',
+						text: 'no'
+						}]
+						}
+					});
 					break;
 			}
 	}
