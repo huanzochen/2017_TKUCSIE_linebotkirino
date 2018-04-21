@@ -186,7 +186,31 @@ bot.on('message', function (event) {
 					});
 				break;
 				default: 
-					event.reply(event.message.text);
+					event.reply([
+					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
+					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' }
+					{
+						type: 'template',
+						template: {
+						type: 'buttons',
+						title: 'Menu',
+						text: 'Please select',
+						actions: [{
+							type: 'message',
+							label: '選單',
+							text: '選單'
+						}, {
+							type: 'message',
+							label: '關於我們',
+							text: '關於我們'
+						}, {
+							type: 'message',
+							label: 't1',
+							text: 't1'
+						}]
+						}
+					}
+					]);
 					break;
 			}
 	}
