@@ -189,6 +189,29 @@ bot.on('message', function (event) {
 					event.reply([
 					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
 					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' },
+					{
+						type: 'template',
+						altText: 'this is a buttons template',
+						template: {
+						type: 'buttons',
+						thumbnailImageUrl: 'https://example.com/bot/images/image.jpg',
+						title: 'Menu',
+						text: 'Please select',
+						actions: [{
+						  type: 'postback',
+						  label: 'Buy',
+						  data: 'action=buy&itemid=123'
+						}, {
+						  type: 'postback',
+						  label: 'Add to cart',
+						  data: 'action=add&itemid=123'
+						}, {
+						  type: 'uri',
+						  label: 'View detail',
+						  uri: 'http://example.com/page/123'
+						}]
+						}
+					},
 					/**
 					{
 						type: 'template',
