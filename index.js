@@ -194,9 +194,6 @@ bot.on('message', function (event) {
 						altText: '公告',
 						template: {
 						type: 'buttons',
-						thumbnailImageUrl: 'https://example.com/bot/images/image.jpg',
-						title: 'Menu',
-						text: 'Please select',
 						actions: [{
 							type: 'message',
 							label: '選單',
