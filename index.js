@@ -119,7 +119,7 @@ bot.on('message', function (event) {
 						template: {
 						type: 'buttons',
 						title: '主題',
-						text: 'Please select',
+						text: '請選擇主題',
 						actions: [{
 							type: 'message',
 							label: '美妝',
@@ -128,6 +128,22 @@ bot.on('message', function (event) {
 							type: 'message',
 							label: '旅遊',
 							text: '旅遊新聞'
+						}, {
+							type: 'message',
+							label: '金融',
+							text: '金融新聞'
+						}, {
+							type: 'message',
+							label: '運動',
+							text: '運動新聞'
+						}, {
+							type: 'message',
+							label: '綜藝',
+							text: '綜藝新聞'
+						}, {
+							type: 'message',
+							label: '科技',
+							text: '科技新聞'
 						}]
 						}
 					});
