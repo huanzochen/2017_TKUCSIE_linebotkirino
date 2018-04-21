@@ -60,6 +60,7 @@ bot.on('message', function (event) {
 						}]
 						}
 					});
+					break;
 				case 'confirmt':
 					event.reply({
 						type: 'template',
@@ -78,6 +79,7 @@ bot.on('message', function (event) {
 						}]
 						}
 					});
+					break;
 				case 'carouselt':
 					event.reply({
 						type: 'template',
@@ -121,6 +123,7 @@ bot.on('message', function (event) {
 						}]
 						}
 					});
+					break;
 				default: 
 					event.reply(event.message.text);
 					break;
