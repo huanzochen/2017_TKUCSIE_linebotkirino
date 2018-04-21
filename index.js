@@ -30,6 +30,12 @@ bot.on('message', function (event) {
 				case '資料':
 					event.reply('Unknow message: ' + JSON.stringify(event));
 					break;
+				case '我愛你':
+					event.reply('我也4^_^');
+					break;
+				case '我喜歡你':
+					event.reply('好臭');
+					break;
 				default: 
 					event.reply(event.message.text);
 					break;
