@@ -27,6 +27,9 @@ bot.on('message', function (event) {
 						return event.reply('Hello ' + profile.displayName + ' ' + profile.userId);
 					});
 					break;
+				case '資料':
+					event.reply('Unknow message: ' + JSON.stringify(event));
+					break;
 				default: 
 					event.reply(event.message.text);
 					break;
