@@ -20,12 +20,15 @@ app.post('/linewebhook', linebotParser);
 
 bot.on('message', function (event) {
 	switch (event.message.type){
-		case 'text':
-			switch(event.message.type){
+		case 'text': 
+			switch(event.message.text){
 				case '我':
 					event.source.profile().then(function (profile) {
 						return event.reply('Hello ' + profile.displayName + ' ' + profile.userId);
 					});
+					break;
+				default: 
+					event.reply(event.message.text);
 					break;
 			}
 	}
