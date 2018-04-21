@@ -140,10 +140,6 @@ bot.on('message', function (event) {
 							type: 'message',
 							label: '綜藝',
 							text: '綜藝新聞'
-						}, {
-							type: 'message',
-							label: '科技',
-							text: '科技新聞'
 						}]
 						}
 					});
