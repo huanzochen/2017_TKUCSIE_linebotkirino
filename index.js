@@ -18,6 +18,30 @@ app.get('/',function(req,res){
 
 app.post('/linewebhook', linebotParser);
 
+bot.on('follow',   function (event) { 
+	event.reply([
+					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
+					{ type: 'text', text: '請點選下方選項獲取最新資訊' },
+					{
+						type: 'template',
+						altText: '選項',
+						template: {
+						type: 'buttons',
+						text: '選項',
+						actions: [{
+								type: 'message',
+								label: '選單',
+								text: '選單'
+							}, {
+								type: 'message',
+								label: '關於我們',
+								text: '關於我們'
+							}]
+						}
+					},
+					]);
+});
+
 bot.on('message', function (event) {
 	switch (event.message.type){
 		case 'text': 
@@ -344,7 +368,7 @@ bot.on('message', function (event) {
 				default: 
 					event.reply([
 					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
-					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方選項' },
+					{ type: 'text', text: '請點選下方選項獲取最新資訊' },
 					{
 						type: 'template',
 						altText: '選項',
