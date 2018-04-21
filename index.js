@@ -36,6 +36,31 @@ bot.on('message', function (event) {
 				case '我喜歡你':
 					event.reply('好臭你這臭宅');
 					break;
+				case '選單':
+					event.reply({
+						type: 'template',
+						altText: '新聞選單',
+						template: {
+						type: 'buttons',
+						thumbnailImageUrl: 'https://example.com/bot/images/image.jpg',
+						title: 'Menu',
+						text: 'Please select',
+						actions: [{
+							type: 'message',
+							label: 'Yes',
+							text: 'yes'
+						}, {
+							type: 'message',
+							label: 'No',
+							text: 'No'
+						}, {
+							type: 'message',
+							label: 't1',
+							text: 't1'
+						}]
+						}
+					});
+					break;
 				case 't1':
 					event.reply({
 						type: 'template',
