@@ -34,7 +34,7 @@ bot.on('message', function (event) {
 					event.reply('我也4^_^');
 					break;
 				case '我喜歡你':
-					event.reply('好臭');
+					event.reply('好臭你這臭宅');
 					break;
 				default: 
 					event.reply(event.message.text);
