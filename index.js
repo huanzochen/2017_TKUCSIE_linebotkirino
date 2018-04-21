@@ -37,6 +37,7 @@ bot.on('message', function (event) {
 					event.reply('好臭你這臭宅');
 					break;
 				case '選單':
+				/*
 					event.reply({
 						type: 'template',
 						altText: '選單',
@@ -64,6 +65,69 @@ bot.on('message', function (event) {
 							type: 'message',
 							label: '綜藝',
 							text: '綜藝新聞'
+						}, {
+							type: 'message',
+							label: '科技',
+							text: '科技新聞'
+						}, {
+							type: 'message',
+							label: '動漫',
+							text: '動漫新聞'
+						}, {
+							type: 'message',
+							label: '遊戲',
+							text: '遊戲新聞'
+						}, {
+							type: 'message',
+							label: '汽車',
+							text: '汽車新聞'
+						}, {
+							type: 'message',
+							label: '電影',
+							text: '電影新聞'
+						}, {
+							type: 'message',
+							label: '男生話題',
+							text: '男生話題'
+						}, {
+							type: 'message',
+							label: '女生話題',
+							text: '女生話題'
+						}, {
+							type: 'message',
+							label: '美食',
+							text: '美食新聞'
+						}, {
+							type: 'message',
+							label: '閒聊',
+							text: '閒聊新聞'
+						}, {
+							type: 'message',
+							label: '國際',
+							text: '國際新聞'
+						}, {
+							type: 'message',
+							label: '購物',
+							text: '購物新聞'
+						}]
+						}
+					});
+				*/
+					event.reply({
+						type: 'template',
+						altText: '選單',
+						template: {
+						type: 'buttons',
+						title: '主題',
+						text: 'Please select',
+						actions: [{
+							type: 'message',
+							label: '美妝',
+							text: '美妝新聞'
+						}, {
+							type: 'message',
+							label: '旅遊',
+							text: '旅遊新聞'
 						}]
 						}
 					});
