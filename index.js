@@ -194,6 +194,7 @@ bot.on('message', function (event) {
 						altText: '說明',
 						template: {
 						type: 'buttons',
+						title: '選單',
 						actions: [{
 						  type: 'postback',
 						  label: 'Buy',
