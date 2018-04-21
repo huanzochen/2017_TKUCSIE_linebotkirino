@@ -189,10 +189,9 @@ bot.on('message', function (event) {
 					event.reply([
 					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
 					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' },
-					/*
 					{
 						type: 'template',
-						altText: 'this is a buttons template',
+						altText: '說明',
 						template: {
 						type: 'buttons',
 						title: 'Menu',
@@ -212,7 +211,7 @@ bot.on('message', function (event) {
 						}]
 						}
 					},
-					*/
+					/**
 					{
 						type: 'template',
 						altText: '說明',
@@ -234,6 +233,7 @@ bot.on('message', function (event) {
 							}]
 						}
 					},
+					*/
 					]);
 					break;
 			}
