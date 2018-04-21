@@ -36,7 +36,7 @@ bot.on('message', function (event) {
 				case '我喜歡你':
 					event.reply('好臭你這臭宅');
 					break;
-				case 'buttont':
+				case 't1':
 					event.reply({
 						type: 'template',
 						altText: 'this is a buttons template',
@@ -61,7 +61,7 @@ bot.on('message', function (event) {
 						}
 					});
 					break;
-				case 'confirmt':
+				case 't2':
 					event.reply({
 						type: 'template',
 						altText: 'this is a confirm template',
@@ -80,7 +80,7 @@ bot.on('message', function (event) {
 						}
 					});
 					break;
-				case 'carouselt':
+				case 't3':
 					event.reply({
 						type: 'template',
 						altText: 'this is a carousel template',
@@ -124,6 +124,42 @@ bot.on('message', function (event) {
 						}
 					});
 					break;
+				case 'imgmap':
+					event.reply({
+						type: 'imagemap',
+						baseUrl: 'https://example.com/bot/images/rm001',
+						altText: 'this is an imagemap',
+						baseSize: { height: 1040, width: 1040 },
+						actions: [{
+						type: 'uri',
+						linkUri: 'https://example.com/',
+						area: { x: 0, y: 0, width: 520, height: 1040 }
+						}, {
+						type: 'message',
+						text: 'hello',
+						area: { x: 520, y: 0, width: 520, height: 1040 }
+						}]
+					});
+				break;
+				case 'multext':
+					event.reply(['Hello, world 1', 'Hello, world 2']);
+				break;
+				case 'msgobj':
+					event.reply({ type: 'text', text: 'Hello, world' });
+				break;
+				case 'mulmsgobj':
+					event.reply([
+					{ type: 'text', text: 'Hello, world 1' },
+					{ type: 'text', text: 'Hello, world 2' }
+					]);
+				break;
+				case 'img':
+					event.reply({
+					type: 'image',
+					originalContentUrl: 'https://example.com/original.jpg',
+					previewImageUrl: 'https://example.com/preview.jpg'
+					});
+				break;
 				default: 
 					event.reply(event.message.text);
 					break;
