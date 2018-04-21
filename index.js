@@ -39,24 +39,75 @@ bot.on('message', function (event) {
 				case '選單':
 					event.reply({
 						type: 'template',
-						altText: '新聞選單',
+						altText: '選單',
 						template: {
 						type: 'buttons',
-						thumbnailImageUrl: 'https://example.com/bot/images/image.jpg',
-						title: 'Menu',
+						title: '主題',
 						text: 'Please select',
 						actions: [{
 							type: 'message',
-							label: 'Yes',
-							text: 'yes'
+							label: '美妝',
+							text: '美妝新聞'
 						}, {
 							type: 'message',
-							label: 'No',
-							text: 'No'
+							label: '旅遊',
+							text: '旅遊新聞'
 						}, {
 							type: 'message',
-							label: 't1',
-							text: 't1'
+							label: '金融',
+							text: '金融新聞'
+						}, {
+							type: 'message',
+							label: '運動',
+							text: '運動新聞'
+						}, {
+							type: 'message',
+							label: '綜藝',
+							text: '綜藝新聞'
+						}, {
+							type: 'message',
+							label: '科技',
+							text: '科技新聞'
+						}, {
+							type: 'message',
+							label: '動漫',
+							text: '動漫新聞'
+						}, {
+							type: 'message',
+							label: '遊戲',
+							text: '遊戲新聞'
+						}, {
+							type: 'message',
+							label: '汽車',
+							text: '汽車新聞'
+						}, {
+							type: 'message',
+							label: '電影',
+							text: '電影新聞'
+						}, {
+							type: 'message',
+							label: '男生話題',
+							text: '男生話題'
+						}, {
+							type: 'message',
+							label: '女生話題',
+							text: '女生話題'
+						}, {
+							type: 'message',
+							label: '美食',
+							text: '美食新聞'
+						}, {
+							type: 'message',
+							label: '閒聊',
+							text: '閒聊新聞'
+						}, {
+							type: 'message',
+							label: '國際',
+							text: '國際新聞'
+						}, {
+							type: 'message',
+							label: '購物',
+							text: '購物新聞'
 						}]
 						}
 					});
@@ -188,13 +239,13 @@ bot.on('message', function (event) {
 				default: 
 					event.reply([
 					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
-					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' },
+					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方選項' },
 					{
 						type: 'template',
 						altText: '說明',
 						template: {
 						type: 'buttons',
-						text: '選單',
+						text: '選項',
 						actions: [{
 								type: 'message',
 								label: '選單',
@@ -203,10 +254,6 @@ bot.on('message', function (event) {
 								type: 'message',
 								label: '關於我們',
 								text: '關於我們'
-							}, {
-								type: 'message',
-								label: 't1',
-								text: 't1'
 							}]
 						}
 					},
