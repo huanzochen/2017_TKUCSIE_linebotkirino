@@ -191,7 +191,7 @@ bot.on('message', function (event) {
 					{ type: 'text', text: '想呼叫最新資訊的話,請輸入選單,或點選下方按鈕' },
 					{
 						type: 'template',
-						altText: '公告',
+						altText: '說明',
 						template: {
 						type: 'buttons',
 						actions: [{
