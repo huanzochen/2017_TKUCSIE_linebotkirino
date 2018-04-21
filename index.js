@@ -1,5 +1,6 @@
 const linebot = require('linebot');
 const express = require('express');
+const rp = require('request-promise');
 
 const bot = linebot({
 	channelId: process.env.CHANNEL_ID,
@@ -18,11 +19,16 @@ app.get('/',function(req,res){
 app.post('/linewebhook', linebotParser);
 
 bot.on('message', function (event) {
-	event.reply(event.message.text).then(function (data) {
-		console.log('Success', data);
-	}).catch(function (error) {
-		console.log('Error', error);
-	});
+	switch (event.message.type){
+		case 'text':
+			switch(event.message.type){
+				case '我':
+					event.source.profile().then(function (profile) {
+						return event.reply('Hello ' + profile.displayName + ' ' + profile.userId);
+					});
+					break;
+			}
+	}
 });
 
 app.listen(process.env.PORT || 80, function () {
