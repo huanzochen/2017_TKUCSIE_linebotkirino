@@ -173,12 +173,12 @@ bot.on('message', function (event) {
 						text: '主題3',
 						actions: [{
 							type: 'message',
-							label: '汽車話題',
-							text: '汽車話題'
+							label: '汽車',
+							text: '汽車新聞'
 						}, {
 							type: 'message',
-							label: '電影話題',
-							text: '電影話題'
+							label: '電影',
+							text: '電影新聞'
 						}, {
 							type: 'message',
 							label: '男生話題',
