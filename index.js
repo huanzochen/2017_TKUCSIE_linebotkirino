@@ -145,23 +145,23 @@ bot.on('message', function (event) {
 						altText: '選單2',
 						template: {
 						type: 'buttons',
-						text: '請選擇主題',
+						text: '主題2',
 						actions: [{
 							type: 'message',
-							label: '汽車',
+							label: '綜藝',
 							text: '綜藝新聞'
 						}, {
 							type: 'message',
-							label: '電影',
+							label: '科技',
 							text: '科技新聞'
 						}, {
 							type: 'message',
 							label: '動漫',
-							text: '動漫新聞'
+							text: '科技新聞'
 						}, {
 							type: 'message',
 							label: '遊戲',
-							text: '遊戲新聞'
+							text: '科技新聞'
 						}]
 						}
 					},
@@ -170,23 +170,23 @@ bot.on('message', function (event) {
 						altText: '選單3',
 						template: {
 						type: 'buttons',
-						text: '請選擇主題',
+						text: '主題3',
 						actions: [{
 							type: 'message',
-							label: '美妝',
-							text: '美妝新聞'
+							label: '汽車話題',
+							text: '汽車話題'
 						}, {
 							type: 'message',
-							label: '旅遊',
-							text: '旅遊新聞'
+							label: '電影話題',
+							text: '電影話題'
 						}, {
 							type: 'message',
-							label: '金融',
-							text: '金融新聞'
+							label: '男生話題',
+							text: '男生話題'
 						}, {
 							type: 'message',
-							label: '運動',
-							text: '運動新聞'
+							label: '女生話題',
+							text: '女生話題'
 						}]
 						}
 					},
@@ -195,23 +195,23 @@ bot.on('message', function (event) {
 						altText: '選單4',
 						template: {
 						type: 'buttons',
-						text: '請選擇主題',
+						text: '主題4',
 						actions: [{
 							type: 'message',
-							label: '美妝',
-							text: '美妝新聞'
+							label: '美食',
+							text: '美食新聞'
 						}, {
 							type: 'message',
-							label: '旅遊',
-							text: '旅遊新聞'
+							label: '閒聊',
+							text: '閒聊新聞'
 						}, {
 							type: 'message',
-							label: '金融',
-							text: '金融新聞'
+							label: '國際',
+							text: '國際新聞'
 						}, {
 							type: 'message',
-							label: '運動',
-							text: '運動新聞'
+							label: '購物',
+							text: '購物新聞'
 						}]
 						}
 					},
