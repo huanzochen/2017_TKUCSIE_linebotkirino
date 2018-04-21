@@ -136,10 +136,6 @@ bot.on('message', function (event) {
 							type: 'message',
 							label: '運動',
 							text: '運動新聞'
-						}, {
-							type: 'message',
-							label: '綜藝',
-							text: '綜藝新聞'
 						}]
 						}
 					});
