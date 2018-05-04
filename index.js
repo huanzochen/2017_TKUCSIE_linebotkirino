@@ -75,7 +75,7 @@ function Getjson(){
     rp(opts)
     .then(function (json) {
         for(var k=0;k<json[0].Summary.length;k++){
-                    //replymakeup.push(json[0].Summary[k].excerpt);
+                    replymakeup.push(json[0].Summary[k].excerpt);
                     console.log(json[0].Summary[k].excerpt);
         }
     })
@@ -244,7 +244,7 @@ bot.on('message', function (event) {
                     //event.reply(json[0].Summary[0].excerpt);
                     Getjson();
                     event.reply(replymakeup);
-                    console.log(replymakeup);
+                    console.log(replymakeup+'caaaaaaaaase');
                     break;
 				case 't1':
 					event.reply({
