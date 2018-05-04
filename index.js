@@ -1,6 +1,7 @@
 const linebot = require('linebot');
 const express = require('express');
 const rp = require('request-promise');
+//var rp = require('request-promise');
 
 const bot = linebot({
 	channelId: process.env.CHANNEL_ID,
@@ -9,8 +10,36 @@ const bot = linebot({
 });
 
 const app = express();
-
 const linebotParser = bot.parser();
+
+ 
+const SITE_NAME = '西屯';
+const makeupjson;
+const opts = {
+    uri: "http://opendata2.epa.gov.tw/AQI.json",
+    json: true
+};
+ 
+rp(opts)
+.then(function (repos) {
+    let data;
+    
+    for (i in repos) {
+        if (repos[i].SiteName == SITE_NAME) {
+            data = repos[i];
+            break;
+        }
+    }
+    console.log(data);
+    makeupjson = data;
+})
+.catch(function (err) {
+    console.log('出錯了～找不到指定資源…');
+});
+
+
+
+
 
 app.get('/',function(req,res){
     res.send('Hello World!');
@@ -166,9 +195,8 @@ bot.on('message', function (event) {
 					]);
 					break;
                 case '美妝':
-                    event.reply({
-                        
-                    });
+                    console.log(makeupjson);
+                    event.reply(makeupjson);
                     break;
 				case 't1':
 					event.reply({
