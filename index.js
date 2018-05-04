@@ -242,6 +242,7 @@ bot.on('message', function (event) {
                 case '美妝':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replymakeup);
+                    console.log(replymakeup);
                     break;
 				case 't1':
 					event.reply({
