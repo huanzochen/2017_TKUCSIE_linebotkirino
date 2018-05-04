@@ -77,7 +77,6 @@ function Getjson(){
         for(var k=0;k<json[0].Summary.length;k++){
                     console.log(json[0].Summary[k].excerpt);
         }
-        
         return replytext;
     })
     .catch(function (err) {
@@ -244,6 +243,7 @@ bot.on('message', function (event) {
                 case '美妝':
                     replytext = Getjson();
                     //event.reply(json[0].Summary[0].excerpt);
+                    console.log('xxxx'+replytext);
                     event.reply(replytext);
                     break;
 				case 't1':
