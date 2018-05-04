@@ -240,7 +240,11 @@ bot.on('message', function (event) {
 					break;
                 case '美妝':
                     Getjson();
-                    event.reply(json[0].Summary[0].excerpt);
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply([
+                      { type: 'text', text: 'Hello, world 1' },
+                      { type: 'text', text: 'Hello, world 2' }
+                    ]);
                     break;
 				case 't1':
 					event.reply({
