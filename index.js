@@ -14,18 +14,6 @@ const app = express();
 const linebotParser = bot.parser();
 const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
 
-var j = schedule.scheduleJob('30 * * * * *', function(){
-    var rd = Math.floor(Math.random()*15);
-    bot.push(users, {
-        type: 'text',
-        text: reply3c
-    });
-    Getjson();
-});
-
-
-
-
 var makeupjson = [];
 var replytext = ['food','makeup','buyonline','talk','3c','acg','boy','finance','game','girl','movie','sport','travel','tvepisode','vehicle'];
 var replyfood = '';
@@ -43,6 +31,18 @@ var replysport = '';
 var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
+
+Getjson();
+var j = schedule.scheduleJob('30 * * * * *', function(){
+    var rd = Math.floor(Math.random()*15);
+    bot.push(users, {
+        type: 'text',
+        text: (reply+replytext[rd])
+    });
+    Getjson();
+    console.log('rd:'+rd);
+});
+
 
 function Gettime(){
         var today=new Date();
