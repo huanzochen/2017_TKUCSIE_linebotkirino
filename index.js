@@ -17,6 +17,54 @@ const SITE_NAME = '西屯';
 var makeupjson = [];
 
 
+function Gettime(){
+        var today=new Date();
+        var Filename = [];
+        var Fmonth,Fdate,Fhours,Fminutes;
+        for(var i=0;i<=9;i++){
+            if((today.getMonth()+1)<10){
+                Fmonth = '0'+(today.getMonth()+1);
+            }
+            else if(9<(today.getMonth()+1)<13){
+                Fmonth = (today.getMonth()+1);
+            }
+            else{console.log("月錯誤");}
+            if((today.getDate())<10){
+                Fdate = '0'+(today.getDate());
+            }
+            else if(9<(today.getDate())<32){
+                Fdate = (today.getDate());
+            }
+            else{console.log("日錯誤");};
+            if(today.getHours()<10){
+                Fhours = '0'+(today.getHours());
+            }
+            else if(9<today.getHours()<24){
+                Fhours = (today.getHours());
+            }
+            else{console.log("小時錯誤");}
+            if(today.getMinutes()<10){
+                Fminutes = ('0'+today.getMinutes());
+            }
+            else if(9<today.getMinutes()<61){
+                Fminutes = (today.getMinutes());
+            }
+            else{console.log("分錯誤");}
+            if(Fminutes%10>0&&Fminutes>10){ //分歸整
+                Fminutes = (Fminutes-(Fminutes%10));
+            }
+            else if(Fminutes%10>0&&Fminutes>0){
+                Fminutes = '00';
+            }
+            Filename.push(today.getFullYear()+Fmonth+Fdate+Fhours+Fminutes);
+            today.setMinutes(today.getMinutes() - 10);
+        }
+        //console.log('Fminutes='+Fminutes); //檢查分鐘數
+        //console.log(Filename); //檔案名稱
+        return Filename;
+    }
+
+
 const opts = {
     uri: "http://opendata2.epa.gov.tw/AQI.json",
     json: true
@@ -33,6 +81,9 @@ rp(opts)
     }
     console.log(data);
     makeupjson = data;
+    ans = Gettime();
+    console.log(ans);
+    
 })
 .catch(function (err) {
     console.log('出錯了～找不到指定資源…');
@@ -196,7 +247,6 @@ bot.on('message', function (event) {
 					]);
 					break;
                 case '美妝':
-                    console.log(makeupjson);
                     event.reply(makeupjson);
                     break;
 				case 't1':
