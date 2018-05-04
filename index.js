@@ -79,6 +79,7 @@ function Getjson(){
     .catch(function (err) {
         console.log('出錯了～找不到指定資源…');
     });
+    return json;
 }
 
 
@@ -239,7 +240,7 @@ bot.on('message', function (event) {
 					break;
                 case '美妝':
                     Getjson();
-                    event.reply(makeupjson);
+                    event.reply(json[0].Summary[0].excerpt);
                     break;
 				case 't1':
 					event.reply({
