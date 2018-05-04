@@ -241,7 +241,7 @@ bot.on('message', function (event) {
                 case '美妝':
                     Getjson();
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(['Hello, world 1', 'Hello, world 2']);
+                    event.reply(['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2']);
                     break;
 				case 't1':
 					event.reply({
