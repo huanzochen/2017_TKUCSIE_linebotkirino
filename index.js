@@ -437,6 +437,112 @@ bot.on('message', function (event) {
 					},
 					]);
 					break;
+                case '選單2':
+                    
+					event.reply([
+					columns: [{
+						type: 'template',
+						altText: '選單',
+						template: {
+						type: 'buttons',
+						title: '主題',
+						text: '請選擇主題',
+						actions: [{
+							type: 'message',
+							label: '美妝',
+							text: '美妝新聞'
+						}, {
+							type: 'message',
+							label: '旅遊',
+							text: '旅遊新聞'
+						}, {
+							type: 'message',
+							label: '金融',
+							text: '金融新聞'
+						}, {
+							type: 'message',
+							label: '運動',
+							text: '運動新聞'
+						}]
+						}
+					},
+					{
+						type: 'template',
+						altText: '選單2',
+						template: {
+						type: 'buttons',
+						text: '主題2',
+						actions: [{
+							type: 'message',
+							label: '綜藝',
+							text: '綜藝新聞'
+						}, {
+							type: 'message',
+							label: '科技',
+							text: '科技新聞'
+						}, {
+							type: 'message',
+							label: '動漫',
+							text: '動漫新聞'
+						}, {
+							type: 'message',
+							label: '遊戲',
+							text: '遊戲新聞'
+						}]
+						}
+					},
+					{
+						type: 'template',
+						altText: '選單3',
+						template: {
+						type: 'buttons',
+						text: '主題3',
+						actions: [{
+							type: 'message',
+							label: '汽車',
+							text: '汽車新聞'
+						}, {
+							type: 'message',
+							label: '電影',
+							text: '電影新聞'
+						}, {
+							type: 'message',
+							label: '男生話題',
+							text: '男生話題'
+						}, {
+							type: 'message',
+							label: '女生話題',
+							text: '女生話題'
+						}]
+						}
+					},
+					{
+						type: 'template',
+						altText: '選單4',
+						template: {
+						type: 'buttons',
+						text: '主題4',
+						actions: [{
+							type: 'message',
+							label: '美食',
+							text: '美食新聞'
+						}, {
+							type: 'message',
+							label: '閒聊',
+							text: '閒聊話題'
+						}, {
+							type: 'message',
+							label: '國際',
+							text: '國際新聞'
+						}, {
+							type: 'message',
+							label: '購物',
+							text: '購物新聞'
+						}]
+						}
+					},]
+					]);
+					break;
                 case '美妝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replymakeup);
