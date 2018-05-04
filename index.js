@@ -22,6 +22,7 @@ function Gettime(){
         var Filename = [];
         var Fmonth,Fdate,Fhours,Fminutes;
         today.setHours(today.getHours() + 8);
+        today.setMinutes(today.getMinutes() - 10);
             if((today.getMonth()+1)<10){
                 Fmonth = '0'+(today.getMonth()+1);
             }
