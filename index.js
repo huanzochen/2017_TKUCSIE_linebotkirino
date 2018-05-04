@@ -452,7 +452,11 @@ bot.on('message', function (event) {
                             type: 'message',
                             label: '閒聊',
                             text: '閒聊話題'
-                          }, {
+                          },{
+                            type: 'message',
+                            label: '遊戲',
+                            text: '遊戲話題'
+                          },{
                             type: 'postback',
                             label: 'Add to cart',
                             data: 'action=add&itemid=111'
