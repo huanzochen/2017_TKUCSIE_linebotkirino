@@ -19,6 +19,17 @@ var replyfood = '';
 var replymakeup = '';
 var replybuyonline = '';
 var replytalk = '';
+var reply3c = '';
+var replyacg = '';
+var replyboy = '';
+var replyfinance = '';
+var replygame = '';
+var replygirl = '';
+var replymovie = '';
+var replysport = '';
+var replytravel = '';
+var replytvepisode = '';
+var replyvehicle = '';
 
 function Gettime(){
         var today=new Date();
@@ -70,7 +81,7 @@ function Gettime(){
 function Getjson(){
     Filename = Gettime();
     console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
-    var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk'];
+    var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
 
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
@@ -119,6 +130,149 @@ function Getjson(){
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
                         replytalk= (replytalk+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[4]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        reply3c= (reply3c+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[5]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replyacg= (replyacg+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[6]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replyboy= (replyboy+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[7]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replyfinance= (replyfinance+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[8]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replygame= (replygame+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[9]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replygirl= (replygirl+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[10]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replymovie= (replymovie+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[11]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replysport= (replysport+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[12]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replytravel= (replytravel+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[13]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replytvepisode= (replytvepisode+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[14]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replyvehicle= (replyvehicle+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
