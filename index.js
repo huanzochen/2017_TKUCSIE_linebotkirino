@@ -124,7 +124,7 @@ function Getjson(){
         .catch(function (err) {
             console.log('出錯了~找不到指定資源');
         });
-    setTimeout(Getjson(), 600000);
+    setInterval(Getjson(), 600000);
 }
 
 Getjson();
