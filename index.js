@@ -132,7 +132,6 @@ function Getjson(){
 
 app.get('/',function(req,res){
     res.send('Hello World!');
-    Getjson();
 });
 
 app.post('/linewebhook', linebotParser);
@@ -180,6 +179,7 @@ bot.on('message', function (event) {
 					event.reply('好臭你這臭宅');
 					break;
 				case '選單':
+                    Getjson();
 					event.reply([
 					{
 						type: 'template',
@@ -287,6 +287,7 @@ bot.on('message', function (event) {
                 case '美妝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replymakeup);
+                    console.log('xxx');
                     break;
 				case 't1':
 					event.reply({
