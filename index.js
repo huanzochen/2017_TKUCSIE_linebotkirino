@@ -64,9 +64,10 @@ function Gettime(){
     }
 
 function Getjson(){
+    Filename = Gettime();
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','news/3C','news/digital','news/entertainment','news/finance','news/industrial_economics','news/interational','news/sport','news/stockmarket','news/technology','news/travel','news/world'];
     const opts = {
-        uri: "http://projectkarubi.hopto.org/"+theme[0],
+        uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
         json: true
     };
     rp(opts)
@@ -237,6 +238,7 @@ bot.on('message', function (event) {
 					]);
 					break;
                 case '美妝':
+                    Getjson();
                     event.reply(makeupjson);
                     break;
 				case 't1':
