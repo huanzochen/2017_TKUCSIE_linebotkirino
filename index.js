@@ -14,7 +14,8 @@ const linebotParser = bot.parser();
 
 
 var makeupjson = [];
-var replyssss = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
+var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
+var replymakeup = [];
 
 function Gettime(){
         var today=new Date();
@@ -73,13 +74,9 @@ function Getjson(){
     };
     rp(opts)
     .then(function (json) {
-        var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
         for(var k=0;k<json[0].Summary.length;k++){
-                    console.log(json[0].Summary[k].excerpt);
-                    console.log(replytext+'arrrrrrray');
+                    replymakeup.push(json[0].Summary[k].excerpt);
         }
-        
-        return replytext;
     })
     .catch(function (err) {
         console.log('出錯了～找不到指定資源…');
@@ -243,9 +240,8 @@ bot.on('message', function (event) {
 					]);
 					break;
                 case '美妝':
-                    replytext = Getjson();
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replyssss);
+                    event.reply(replymakeup);
                     break;
 				case 't1':
 					event.reply({
