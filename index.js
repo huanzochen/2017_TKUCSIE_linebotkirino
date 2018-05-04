@@ -289,6 +289,21 @@ bot.on('message', function (event) {
                     event.reply(replymakeup);
                     console.log('xxx'+replymakeup);
                     break;
+                case '美食新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replyfood);
+                    console.log('xxx'+replyfood);
+                    break;
+                case '閒聊話題':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replytalk);
+                    console.log('xxx'+replytalk);
+                    break;
+                case '購物新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replybuyonline);
+                    console.log('xxx'+replybuyonline);
+                    break;
 				case 't1':
 					event.reply({
 						type: 'template',
