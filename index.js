@@ -15,18 +15,19 @@ const linebotParser = bot.parser();
 const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
 
 var j = schedule.scheduleJob('30 * * * * *', function(){
-    console.log('The answer to life, the universe, and everything!');
+    var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
-        text: '嘿嘿嘿嘿嘿嘿'
+        text: reply3c
     });
+    Getjson();
 });
 
 
 
 
 var makeupjson = [];
-var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
+var replytext = ['food','makeup','buyonline','talk','3c','acg','boy','finance','game','girl','movie','sport','travel','tvepisode','vehicle'];
 var replyfood = '';
 var replymakeup = '';
 var replybuyonline = '';
@@ -293,7 +294,7 @@ function Getjson(){
     
 }
 
-Getjson();
+
 
 app.get('/',function(req,res){
     res.send('Hello World!');
