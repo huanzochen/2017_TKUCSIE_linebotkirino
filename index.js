@@ -377,11 +377,11 @@ bot.on('message', function (event) {
 						}, {
 							type: 'message',
 							label: '動漫',
-							text: '科技新聞'
+							text: '動漫新聞'
 						}, {
 							type: 'message',
 							label: '遊戲',
-							text: '科技新聞'
+							text: '遊戲新聞'
 						}]
 						}
 					},
@@ -456,6 +456,61 @@ bot.on('message', function (event) {
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replybuyonline);
                     console.log('xxx'+replybuyonline);
+                    break;
+                case '科技新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(reply3c);
+                    console.log('xxx'+reply3c);
+                    break;
+                case '動漫新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replyacg);
+                    console.log('xxx'+replyacg);
+                    break;
+                case '男生話題':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replyboy);
+                    console.log('xxx'+replyboy);
+                    break;
+                case '金融新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replyfinance);
+                    console.log('xxx'+replyfinance);
+                    break;
+                case '遊戲新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replygame);
+                    console.log('xxx'+replygame);
+                    break;
+                case '女生話題':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replygirl);
+                    console.log('xxx'+replygirl);
+                    break;
+                case '電影新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replymovie);
+                    console.log('xxx'+replymovie);
+                    break;
+                case '運動新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replysport);
+                    console.log('xxx'+replysport);
+                    break;
+                case '旅遊新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replytravel);
+                    console.log('xxx'+replytravel);
+                    break;
+                case '綜藝新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replytvepisode);
+                    console.log('xxx'+replytvepisode);
+                    break;
+                case '汽車新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replyvehicle);
+                    console.log('xxx'+replyvehicle);
                     break;
 				case 't1':
 					event.reply({
