@@ -79,7 +79,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replyfood.push(json[0].Summary[k].excerpt);
+                        replyfood= (replyfood+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -105,7 +105,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replybuyonline.push(json[0].Summary[k].excerpt);
+                        replybuyonline= (replybuyonline+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -118,7 +118,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replytalk.push(json[0].Summary[k].excerpt);
+                        replytalk= (replytalk+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
