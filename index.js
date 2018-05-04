@@ -63,31 +63,22 @@ function Gettime(){
         return Filename;
     }
 
-
-const opts = {
-    uri: "http://opendata2.epa.gov.tw/AQI.json",
-    json: true
-};
-rp(opts)
-.then(function (repos) {
-    let data;
-    
-    for (i in repos) {
-        if (repos[i].SiteName == SITE_NAME) {
-            data = repos[i];
-            break;
+function Getjson(){
+    var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','news/3C','news/digital','news/entertainment','news/finance','news/industrial_economics','news/interational','news/sport','news/stockmarket','news/technology','news/travel','news/world'];
+    const opts = {
+        uri: "http://projectkarubi.hopto.org/"+theme[0],
+        json: true
+    };
+    rp(opts)
+    .then(function (json) {
+        for(var k=0;k<json[0].Summary.length;k++){
+                    console.log(json[0].Summary[k].excerpt);
         }
-    }
-    console.log(data);
-    makeupjson = data;
-    var ans = Gettime();
-    console.log(ans);
-    
-})
-.catch(function (err) {
-    console.log('出錯了～找不到指定資源…');
-});
-
+    })
+    .catch(function (err) {
+        console.log('出錯了～找不到指定資源…');
+    });
+}
 
 
 
