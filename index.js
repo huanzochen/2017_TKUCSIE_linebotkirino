@@ -34,7 +34,7 @@ var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
 
 Getjson();
-var j = schedule.scheduleJob('30 * * * * *', function(){
+var j = schedule.scheduleJob('5 * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
