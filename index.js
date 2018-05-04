@@ -76,9 +76,8 @@ function Getjson(){
     .then(function (json) {
         for(var k=0;k<json[0].Summary.length;k++){
                     replymakeup.push(json[0].Summary[k].excerpt);
-                    console.log(json[0].Summary[k].excerpt);
+                    console.log(replymakeup);
         }
-        return replymakeup;
     })
     .catch(function (err) {
         console.log('出錯了~找不到指定資源…');
@@ -243,7 +242,7 @@ bot.on('message', function (event) {
 					break;
                 case '美妝':
                     //event.reply(json[0].Summary[0].excerpt);
-                    replymakeup = Getjson();
+                    Getjson();
                     event.reply(replymakeup);
                     console.log(replymakeup+'caaaaaaaaase');
                     break;
