@@ -75,11 +75,11 @@ function Getjson(){
         for(var k=0;k<json[0].Summary.length;k++){
                     console.log(json[0].Summary[k].excerpt);
         }
+        return json;
     })
     .catch(function (err) {
         console.log('出錯了～找不到指定資源…');
     });
-    return json;
 }
 
 
