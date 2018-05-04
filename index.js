@@ -14,7 +14,7 @@ const linebotParser = bot.parser();
 
 
 var makeupjson = [];
-var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
+var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
 var replyfood = [];
 var replymakeup = [];
 var replybuyonline = [];
