@@ -15,7 +15,10 @@ const linebotParser = bot.parser();
 
 var makeupjson = [];
 var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
+var replyfood = [];
 var replymakeup = [];
+var replybuyonline = [];
+var replytalk = [];
 
 function Gettime(){
         var today=new Date();
@@ -67,24 +70,67 @@ function Gettime(){
 function Getjson(){
     Filename = Gettime();
     console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
-    var theme = ['talk/Food'];
-    const opts = {
-        uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
-        json: true
-    };
-    rp(opts)
-    .then(function (json) {
-        for(var k=0;k<json[0].Summary.length;k++){
-                    replymakeup.push(json[0].Summary[k].excerpt);
-                    console.log(replymakeup);
-        }
-    })
-    .catch(function (err) {
-        console.log('出錯了~找不到指定資源…');
-    });
+    var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk'];
+
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replyfood.push(json[0].Summary[k].excerpt);
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源…');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[1]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replymakeup.push(json[0].Summary[k].excerpt);
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源…');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[2]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replybuyonline.push(json[0].Summary[k].excerpt);
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源…');
+        });
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[3]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replytalk.push(json[0].Summary[k].excerpt);
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了~找不到指定資源…');
+        });
+
+    
+    setTimeout("Getjson()", 600000);
+    
 }
 
-
+Getjson();
 
 
 app.get('/',function(req,res){
@@ -118,7 +164,6 @@ bot.on('follow',   function (event) {
 });
 
 bot.on('message', function (event) {
-    Getjson();
 	switch (event.message.type){
 		case 'text': 
 			switch(event.message.text){
@@ -244,7 +289,6 @@ bot.on('message', function (event) {
                 case '美妝':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replymakeup);
-                    console.log(replymakeup+'caaaaaaaaase');
                     break;
 				case 't1':
 					event.reply({
