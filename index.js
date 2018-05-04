@@ -65,6 +65,7 @@ function Gettime(){
 
 function Getjson(){
     Filename = Gettime();
+    var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','news/3C','news/digital','news/entertainment','news/finance','news/industrial_economics','news/interational','news/sport','news/stockmarket','news/technology','news/travel','news/world'];
     const opts = {
         uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
@@ -75,7 +76,8 @@ function Getjson(){
         for(var k=0;k<json[0].Summary.length;k++){
                     console.log(json[0].Summary[k].excerpt);
         }
-        return json;
+        
+        return replytext;
     })
     .catch(function (err) {
         console.log('出錯了～找不到指定資源…');
@@ -239,9 +241,9 @@ bot.on('message', function (event) {
 					]);
 					break;
                 case '美妝':
-                    Getjson();
+                    replytext = Getjson();
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2']);
+                    event.reply(replytext);
                     break;
 				case 't1':
 					event.reply({
