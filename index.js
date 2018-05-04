@@ -13,9 +13,8 @@ const app = express();
 const linebotParser = bot.parser();
 
 
-const SITE_NAME = '西屯';
 var makeupjson = [];
-
+var replyssss = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
 
 function Gettime(){
         var today=new Date();
@@ -246,8 +245,7 @@ bot.on('message', function (event) {
                 case '美妝':
                     replytext = Getjson();
                     //event.reply(json[0].Summary[0].excerpt);
-                    console.log('xxxx'+replytext);
-                    event.reply(replytext);
+                    event.reply(replyssss);
                     break;
 				case 't1':
 					event.reply({
