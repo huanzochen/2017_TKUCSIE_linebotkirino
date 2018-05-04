@@ -84,7 +84,7 @@ function Getjson(){
     });
 }
 
-Getjson();
+
 
 
 app.get('/',function(req,res){
@@ -118,6 +118,7 @@ bot.on('follow',   function (event) {
 });
 
 bot.on('message', function (event) {
+    Getjson();
 	switch (event.message.type){
 		case 'text': 
 			switch(event.message.text){
