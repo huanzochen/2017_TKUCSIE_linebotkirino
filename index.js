@@ -94,7 +94,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源…');
+            console.log('出錯了食物');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[1]+"/"+Filename+".json",
@@ -107,7 +107,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了美妝');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[2]+"/"+Filename+".json",
@@ -120,7 +120,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了購物');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[3]+"/"+Filename+".json",
@@ -133,7 +133,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了閒聊');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[4]+"/"+Filename+".json",
@@ -146,7 +146,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了3c');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[5]+"/"+Filename+".json",
@@ -159,7 +159,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了ACG');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[6]+"/"+Filename+".json",
@@ -172,7 +172,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了男生');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[7]+"/"+Filename+".json",
@@ -185,7 +185,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了金融');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[8]+"/"+Filename+".json",
@@ -198,7 +198,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了遊戲');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[9]+"/"+Filename+".json",
@@ -211,7 +211,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了女森');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[10]+"/"+Filename+".json",
@@ -224,7 +224,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了電影');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[11]+"/"+Filename+".json",
@@ -237,7 +237,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了運動');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[12]+"/"+Filename+".json",
@@ -250,7 +250,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了旅遊');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[13]+"/"+Filename+".json",
@@ -263,7 +263,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了綜藝');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[14]+"/"+Filename+".json",
@@ -276,7 +276,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源');
+            console.log('出錯了汽車');
         });
     
 }
