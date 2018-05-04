@@ -124,11 +124,11 @@ function Getjson(){
         .catch(function (err) {
             console.log('出錯了~找不到指定資源');
         });
-    setInterval(Getjson(), 600000);
+    
 }
 
 Getjson();
-
+setInterval(Getjson(), 600000);
 
 app.get('/',function(req,res){
     res.send('Hello World!');
