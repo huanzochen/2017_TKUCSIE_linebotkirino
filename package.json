@@ -10,13 +10,15 @@
     "express": "^4.15.2",
     "linebot": "^1.3.0",
     "request": "^2.85.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "node-schedule":"^1.3.0"
   },
   "keywords": [
     "linebot",
     "node",
     "heroku",
-    "express"
+    "express",
+    "node-schedule"
   ],
   "license": "MIT"
 }

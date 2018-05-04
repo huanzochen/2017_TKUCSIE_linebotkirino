@@ -1,5 +1,6 @@
 const linebot = require('linebot');
 const express = require('express');
+var schedule = require('node-schedule');
 const rp = require('request-promise');
 //var rp = require('request-promise');
 
@@ -12,10 +13,16 @@ const bot = linebot({
 const app = express();
 const linebotParser = bot.parser();
 const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
-bot.push(users, {
-type: 'text',
-text: '嘿嘿嘿嘿嘿嘿'
+
+var j = schedule.scheduleJob('30 * * * * *', function(){
+    console.log('The answer to life, the universe, and everything!');
+    bot.push(users, {
+        type: 'text',
+        text: '嘿嘿嘿嘿嘿嘿'
+    });
 });
+
+
 
 
 var makeupjson = [];
