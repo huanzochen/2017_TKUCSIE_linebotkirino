@@ -11,6 +11,11 @@ const bot = linebot({
 
 const app = express();
 const linebotParser = bot.parser();
+const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
+bot.push(users, {
+type: 'text',
+text: '嘿嘿嘿嘿嘿嘿'
+});
 
 
 var makeupjson = [];
