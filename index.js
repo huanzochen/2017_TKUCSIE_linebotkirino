@@ -109,7 +109,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源…');
+            console.log('出錯了~找不到指定資源');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[3]+"/"+Filename+".json",
