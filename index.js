@@ -16,7 +16,7 @@ const linebotParser = bot.parser();
 var makeupjson = [];
 var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
 var replyfood = [];
-var replymakeup = [];
+var replymakeup;
 var replybuyonline = [];
 var replytalk = [];
 
@@ -92,9 +92,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replymakeup.push(json[0].Summary[k].excerpt);
-                        console.log('makeaaa');
-                        console.log(replymakeup);
+                        replymakeup= (replymakeup+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -129,7 +127,7 @@ function Getjson(){
  
 }
 
-
+Getjson();
 
 
 app.get('/',function(req,res){
@@ -181,7 +179,7 @@ bot.on('message', function (event) {
 					event.reply('好臭你這臭宅');
 					break;
 				case '選單':
-                    Getjson();
+                    
 					event.reply([
 					{
 						type: 'template',
@@ -288,7 +286,7 @@ bot.on('message', function (event) {
 					break;
                 case '美妝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replytext);
+                    event.reply(replymakeup);
                     console.log('xxx');
                     break;
 				case 't1':
