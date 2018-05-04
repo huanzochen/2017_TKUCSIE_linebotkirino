@@ -31,6 +31,7 @@ var replysport = '';
 var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
+var replytheme=[];
 
 Getjson();
 var j = schedule.scheduleJob('30 * * * * *', function(){
@@ -103,7 +104,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replyfood= (replyfood+json[0].Summary[k].excerpt+"\n");
+                        replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -116,7 +117,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replymakeup= (replymakeup+json[0].Summary[k].excerpt+"\n");
+                        replytheme[1]= (replytheme[1]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -129,7 +130,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replybuyonline= (replybuyonline+json[0].Summary[k].excerpt+"\n");
+                        replytheme[2]= (replytheme[2]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -142,7 +143,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replytalk= (replytalk+json[0].Summary[k].excerpt+"\n");
+                        replytheme[3]= (replytheme[3]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -155,7 +156,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        reply3c= (reply3c+json[0].Summary[k].excerpt+"\n");
+                        replytheme[4]= (replytheme[4]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -168,7 +169,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replyacg= (replyacg+json[0].Summary[k].excerpt+"\n");
+                        replytheme[5]= (replytheme[5]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -181,7 +182,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replyboy= (replyboy+json[0].Summary[k].excerpt+"\n");
+                        replytheme[6]= (replytheme[6]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -194,7 +195,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replyfinance= (replyfinance+json[0].Summary[k].excerpt+"\n");
+                        replytheme[7]= (replytheme[7]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -207,7 +208,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replygame= (replygame+json[0].Summary[k].excerpt+"\n");
+                        replytheme[8]= (replytheme[8]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -220,7 +221,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replygirl= (replygirl+json[0].Summary[k].excerpt+"\n");
+                        replytheme[9]= (replytheme[9]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -233,7 +234,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replymovie= (replymovie+json[0].Summary[k].excerpt+"\n");
+                        replytheme[10]= (replytheme[10]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -246,7 +247,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replysport= (replysport+json[0].Summary[k].excerpt+"\n");
+                        replytheme[11]= (replytheme[11]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -259,7 +260,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replytravel= (replytravel+json[0].Summary[k].excerpt+"\n");
+                        replytheme[12]= (replytheme[12]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -272,7 +273,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replytvepisode= (replytvepisode+json[0].Summary[k].excerpt+"\n");
+                        replytheme[13]= (replytheme[13]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -285,7 +286,7 @@ function Getjson(){
         rp(opts)
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
-                        replyvehicle= (replyvehicle+json[0].Summary[k].excerpt+"\n");
+                        replytheme[14]= (replytheme[14]+json[0].Summary[k].excerpt+"\n");
             }
         })
         .catch(function (err) {
@@ -501,78 +502,78 @@ bot.on('message', function (event) {
 					break;
                 case '美妝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replymakeup);
-                    console.log('xxx'+replymakeup);
+                    event.reply(replytheme[1]);
+                    console.log('xxx'+replytheme[1]);
                     break;
                 case '美食新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replyfood);
-                    console.log('xxx'+replyfood);
+                    event.reply(replytheme[0]);
+                    console.log('xxx'+replytheme[0]);
                     break;
                 case '閒聊話題':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replytalk);
-                    console.log('xxx'+replytalk);
+                    event.reply(replytheme[3]);
+                    console.log('xxx'+replytheme[3]);
                     break;
                 case '購物新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replybuyonline);
-                    console.log('xxx'+replybuyonline);
+                    event.reply(replytheme[2]);
+                    console.log('xxx'+replytheme[2]);
                     break;
                 case '科技新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(reply3c);
-                    console.log('xxx'+reply3c);
+                    event.reply(replytheme[4]);
+                    console.log('xxx'+replytheme[4]);
                     break;
                 case '動漫新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replyacg);
-                    console.log('xxx'+replyacg);
+                    event.reply(replytheme[5]);
+                    console.log('xxx'+replytheme[5]);
                     break;
                 case '男生話題':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replyboy);
-                    console.log('xxx'+replyboy);
+                    event.reply(replytheme[6]);
+                    console.log('xxx'+replytheme[6];
                     break;
                 case '金融新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replyfinance);
-                    console.log('xxx'+replyfinance);
+                    event.reply(replytheme[7]);
+                    console.log('xxx'+replytheme[7]);
                     break;
                 case '遊戲新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replygame);
-                    console.log('xxx'+replygame);
+                    event.reply(replytheme[8]);
+                    console.log('xxx'+replytheme[8]);
                     break;
                 case '女生話題':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replygirl);
-                    console.log('xxx'+replygirl);
+                    event.reply(replytheme[9]);
+                    console.log('xxx'+replytheme[9]);
                     break;
                 case '電影新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replymovie);
-                    console.log('xxx'+replymovie);
+                    event.reply(replytheme[10]);
+                    console.log('xxx'+replytheme[10]);
                     break;
                 case '運動新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replysport);
-                    console.log('xxx'+replysport);
+                    event.reply(replytheme[11]);
+                    console.log('xxx'+replytheme[11]);
                     break;
                 case '旅遊新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replytravel);
-                    console.log('xxx'+replytravel);
+                    event.reply(replytheme[12]);
+                    console.log('xxx'+replytheme[12]);
                     break;
                 case '綜藝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replytvepisode);
-                    console.log('xxx'+replytvepisode);
+                    event.reply(replytheme[13]);
+                    console.log('xxx'+replytheme[13]);
                     break;
                 case '汽車新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replyvehicle);
-                    console.log('xxx'+replyvehicle);
+                    event.reply(replytheme[14]);
+                    console.log('xxx'+replytheme[14]);
                     break;
 				case 't1':
 					event.reply({
