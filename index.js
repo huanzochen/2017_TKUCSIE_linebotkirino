@@ -93,6 +93,7 @@ function Getjson(){
         .then(function (json) {
             for(var k=0;k<json[0].Summary.length;k++){
                         replymakeup.push(json[0].Summary[k].excerpt);
+                        console.log('makeaaa');
             }
         })
         .catch(function (err) {
