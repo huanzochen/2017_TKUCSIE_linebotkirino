@@ -74,10 +74,12 @@ function Getjson(){
     };
     rp(opts)
     .then(function (json) {
+        var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
         for(var k=0;k<json[0].Summary.length;k++){
                     console.log(json[0].Summary[k].excerpt);
+                    console.log(replytext+'arrrrrrray');
         }
-        var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
+        
         return replytext;
     })
     .catch(function (err) {
