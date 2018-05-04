@@ -84,7 +84,7 @@ function Getjson(){
     });
 }
 
-
+Getjson();
 
 
 app.get('/',function(req,res){
@@ -242,7 +242,6 @@ bot.on('message', function (event) {
 					break;
                 case '美妝':
                     //event.reply(json[0].Summary[0].excerpt);
-                    Getjson();
                     event.reply(replymakeup);
                     console.log(replymakeup+'caaaaaaaaase');
                     break;
