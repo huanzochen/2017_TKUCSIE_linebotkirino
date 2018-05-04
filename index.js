@@ -126,7 +126,6 @@ function Getjson(){
         });
 
     
-    setTimeout("Getjson()", 600000);
     
 }
 
