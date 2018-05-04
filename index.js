@@ -15,7 +15,7 @@ const linebotParser = bot.parser();
 const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
 
 var makeupjson = [];
-var replytext = ['food','makeup','buyonline','talk','3c','acg','boy','finance','game','girl','movie','sport','travel','tvepisode','vehicle'];
+var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男孩','經濟','遊戲','女生話題','電影','運動','旅遊','綜藝','交通工具'];
 var replyfood = '';
 var replymakeup = '';
 var replybuyonline = '';
@@ -38,7 +38,7 @@ var j = schedule.scheduleJob('30 * * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
-        text: replytheme[rd]
+        text: replytext[rd]+'\n'+replytheme[rd]
     });
     Getjson();
     console.log('rd:'+rd);
