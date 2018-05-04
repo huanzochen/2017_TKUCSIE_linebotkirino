@@ -31,7 +31,7 @@ var replysport = '';
 var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
-var replytheme=[];
+var replytheme=['','','','','','','','','','','','','','',''];
 
 Getjson();
 var j = schedule.scheduleJob('30 * * * * *', function(){
