@@ -21,7 +21,6 @@ function Gettime(){
         var today=new Date();
         var Filename = [];
         var Fmonth,Fdate,Fhours,Fminutes;
-        for(var i=0;i<=9;i++){
             if((today.getMonth()+1)<10){
                 Fmonth = '0'+(today.getMonth()+1);
             }
@@ -56,9 +55,7 @@ function Gettime(){
             else if(Fminutes%10>0&&Fminutes>0){
                 Fminutes = '00';
             }
-            Filename.push(today.getFullYear()+Fmonth+Fdate+Fhours+Fminutes);
-            today.setMinutes(today.getMinutes() - 10);
-        }
+            Filename=(today.getFullYear()+Fmonth+Fdate+Fhours+Fminutes);
         //console.log('Fminutes='+Fminutes); //檢查分鐘數
         //console.log(Filename); //檔案名稱
         return Filename;
@@ -81,7 +78,7 @@ rp(opts)
     }
     console.log(data);
     makeupjson = data;
-    ans = Gettime();
+    var ans = Gettime();
     console.log(ans);
     
 })
