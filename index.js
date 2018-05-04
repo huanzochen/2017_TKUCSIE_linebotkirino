@@ -78,6 +78,7 @@ function Getjson(){
                     replymakeup.push(json[0].Summary[k].excerpt);
                     console.log(json[0].Summary[k].excerpt);
         }
+        console.log("http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json");
         return replymakeup;
     })
     .catch(function (err) {
