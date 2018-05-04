@@ -15,10 +15,10 @@ const linebotParser = bot.parser();
 
 var makeupjson = [];
 var replytext = ['Hello, world 1sdfsddsf \n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs\n sddsfsdsfdsfs', 'Hello, world 2','Hello, world 1sdfsddsf \n sddsfsdsfdsfs', 'Hello, world 2'];
-var replyfood = [];
-var replymakeup;
-var replybuyonline = [];
-var replytalk = [];
+var replyfood = '';
+var replymakeup = '';
+var replybuyonline = '';
+var replytalk = '';
 
 function Gettime(){
         var today=new Date();
@@ -96,7 +96,7 @@ function Getjson(){
             }
         })
         .catch(function (err) {
-            console.log('出錯了~找不到指定資源…');
+            console.log('出錯了~找不到指定資源');
         });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[2]+"/"+Filename+".json",
