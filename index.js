@@ -12,7 +12,7 @@ const bot = linebot({
 const app = express();
 const linebotParser = bot.parser();
 
-/*
+
 const SITE_NAME = '西屯';
 const makeupjson;
 
@@ -37,7 +37,7 @@ rp(opts)
 .catch(function (err) {
     console.log('出錯了～找不到指定資源…');
 });
-*/
+
 
 
 
