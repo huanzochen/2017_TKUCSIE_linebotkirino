@@ -287,7 +287,7 @@ bot.on('message', function (event) {
                 case '美妝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replymakeup);
-                    console.log('xxx');
+                    console.log('xxx'+replymakeup);
                     break;
 				case 't1':
 					event.reply({
