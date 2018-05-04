@@ -445,12 +445,13 @@ bot.on('message', function (event) {
                       template: {
                         type: 'carousel',
                         columns: [{
+                          thumbnailImageUrl: '',
                           title: 'this is menu',
                           text: 'description',
                           actions: [{
-                            type: 'postback',
-                            label: 'Buy',
-                            data: 'action=buy&itemid=111'
+                            type: 'message',
+                            label: '閒聊',
+                            text: '閒聊話題'
                           }, {
                             type: 'postback',
                             label: 'Add to cart',
