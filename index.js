@@ -443,7 +443,7 @@ bot.on('message', function (event) {
                       type: 'template',
                       altText: '選單1',
                       template: {
-                        type: 'buttons',
+                        type: 'carousel',
                         columns: [{
                           thumbnailImageUrl: 'https://example.com/bot/images/item1.jpg',
                           title: 'this is menu',
