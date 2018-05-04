@@ -59,7 +59,7 @@ function Gettime(){
             Filename=(today.getFullYear()+Fmonth+Fdate+Fhours+Fminutes);
         //console.log('Fminutes='+Fminutes); //檢查分鐘數
         //console.log(Filename); //檔案名稱
-        console.log(FIlename);
+        console.log(Filename);
         return Filename;
     }
 
