@@ -75,7 +75,8 @@ function Getjson(){
     rp(opts)
     .then(function (json) {
         for(var k=0;k<json[0].Summary.length;k++){
-                    replymakeup.push(json[0].Summary[k].excerpt);
+                    //replymakeup.push(json[0].Summary[k].excerpt);
+                    console.log(json[0].Summary[k].excerpt);
         }
     })
     .catch(function (err) {
