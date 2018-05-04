@@ -533,7 +533,7 @@ bot.on('message', function (event) {
                 case '男生話題':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[6]);
-                    console.log('xxx'+replytheme[6];
+                    console.log('xxx'+replytheme[6]);
                     break;
                 case '金融新聞':
                     //event.reply(json[0].Summary[0].excerpt);
