@@ -124,16 +124,15 @@ function Getjson(){
         .catch(function (err) {
             console.log('出錯了~找不到指定資源…');
         });
-
-    
-    
+ 
 }
 
-Getjson();
+
 
 
 app.get('/',function(req,res){
     res.send('Hello World!');
+    Getjson();
 });
 
 app.post('/linewebhook', linebotParser);
