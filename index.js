@@ -441,7 +441,7 @@ bot.on('message', function (event) {
                     
 					event.reply({
                       type: 'template',
-                      altText: '選單1',
+                      altText: 'this is a carousel template',
                       template: {
                         type: 'carousel',
                         columns: [{
@@ -449,43 +449,35 @@ bot.on('message', function (event) {
                           title: 'this is menu',
                           text: 'description',
                           actions: [{
-							type: 'message',
-							label: '美食',
-							text: '美食新聞'
-                            }, {
-                                type: 'message',
-                                label: '閒聊',
-                                text: '閒聊話題'
-                            }, {
-                                type: 'message',
-                                label: '國際',
-                                text: '國際新聞'
-                            }, {
-                                type: 'message',
-                                label: '購物',
-                                text: '購物新聞'
-                            }]
+                            type: 'postback',
+                            label: 'Buy',
+                            data: 'action=buy&itemid=111'
+                          }, {
+                            type: 'postback',
+                            label: 'Add to cart',
+                            data: 'action=add&itemid=111'
+                          }, {
+                            type: 'uri',
+                            label: 'View detail',
+                            uri: 'http://example.com/page/111'
+                          }]
                         }, {
-                          thumbnailImageUrl: 'https://example.com/bot/images/item1.jpg',
+                          thumbnailImageUrl: 'https://example.com/bot/images/item2.jpg',
                           title: 'this is menu',
                           text: 'description',
                           actions: [{
-							type: 'message',
-							label: '美食',
-							text: '美食新聞'
-                            }, {
-                                type: 'message',
-                                label: '閒聊',
-                                text: '閒聊話題'
-                            }, {
-                                type: 'message',
-                                label: '國際',
-                                text: '國際新聞'
-                            }, {
-                                type: 'message',
-                                label: '購物',
-                                text: '購物新聞'
-                            }]
+                            type: 'postback',
+                            label: 'Buy',
+                            data: 'action=buy&itemid=222'
+                          }, {
+                            type: 'postback',
+                            label: 'Add to cart',
+                            data: 'action=add&itemid=222'
+                          }, {
+                            type: 'uri',
+                            label: 'View detail',
+                            uri: 'http://example.com/page/222'
+                          }]
                         }]
                       }
                     });
