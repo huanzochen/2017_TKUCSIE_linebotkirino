@@ -66,7 +66,7 @@ function Gettime(){
 
 function Getjson(){
     Filename = Gettime();
-    console.log("http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json");
+    console.log("http://projectkarubi.hopto.org/"+'talk/Food''+"/"+Filename+".json");
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','news/3C','news/digital','news/entertainment','news/finance','news/industrial_economics','news/interational','news/sport','news/stockmarket','news/technology','news/travel','news/world'];
     const opts = {
         uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
