@@ -38,7 +38,7 @@ var j = schedule.scheduleJob('30 * * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
-        text: ('reply'+replytext[rd])
+        text: replytheme[rd]
     });
     Getjson();
     console.log('rd:'+rd);
