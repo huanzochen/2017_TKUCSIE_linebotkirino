@@ -14,7 +14,7 @@ const linebotParser = bot.parser();
 
 
 const SITE_NAME = '西屯';
-const makeupjson;
+var makeupjson = [];
 
 
 const opts = {
