@@ -717,7 +717,8 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                event.reply(event.message.text);
+                    ans = nodejieba.cut(event.message.text);
+                    event.reply(ans);
                     
                     /*
 					event.reply([
