@@ -34,7 +34,7 @@ var replytvepisode = '';
 var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
 
-nodejieba.load({userDict:'dict.txt'})
+nodejieba.load({userDict:'dict.utf8'})
 
 Getjson();
 var j = schedule.scheduleJob('5 * * * *', function(){
