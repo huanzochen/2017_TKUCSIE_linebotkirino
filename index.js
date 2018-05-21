@@ -34,7 +34,7 @@ var replytvepisode = '';
 var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
 
-nodejieba.load({dict:'/dict.txt'})
+nodejieba.load({userDict:'/dict.txt'})
 
 Getjson();
 var j = schedule.scheduleJob('5 * * * *', function(){
@@ -719,7 +719,7 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                    ans = nodejieba.cutHMM(event.message.text);
+                    ans = nodejieba.cut(event.message.text);
                     event.reply(ans);
                     
                     /*
