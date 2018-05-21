@@ -11,14 +11,16 @@
     "linebot": "^1.3.0",
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
-    "node-schedule":"^1.3.0"
+    "node-schedule":"^1.3.0",
+	"nodejieba":"2.2.6"
   },
   "keywords": [
     "linebot",
     "node",
     "heroku",
     "express",
-    "node-schedule"
+    "node-schedule",
+	"nodejieba"
   ],
   "license": "MIT"
 }
