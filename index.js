@@ -33,7 +33,7 @@ var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
-var Fjson;
+var Fjson = new Object;
 
 //nodejieba.load({userDict:'./dict.utf8'})
 
