@@ -105,9 +105,10 @@ function Getjson(){
                 uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
                 json: true
             };
+            var test2=999;
             rp(opts)
-            .then(function (json,themeC) {
-                console.log('在k的迴圈中themeC='+themeC);
+            .then(function (json,themeC,test2) {
+                console.log('在k的迴圈中themeC='+themeC+'test2'+test2);
                 for(var k=0;k<json[0].Summary.length;k++){
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
