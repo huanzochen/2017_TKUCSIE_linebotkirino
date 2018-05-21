@@ -104,7 +104,7 @@ function Getjson(){
                 uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
                 json: true
             };
-            rp(opts)
+            rp(opts,themeC)
             .then(function (json,themeC) {
                 for(var k=0;k<json[0].Summary.length;k++){
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
