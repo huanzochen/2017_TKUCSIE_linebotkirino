@@ -105,7 +105,7 @@ function Getjson(){
                 json: true
             };
             rp(opts,themeC)
-            .then(function (json,themeC) {
+            .then((json,themeC) {
                 for(var k=0;k<json[0].Summary.length;k++){
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
