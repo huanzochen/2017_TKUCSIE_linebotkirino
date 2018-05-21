@@ -33,6 +33,7 @@ var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
+var Fjson;
 
 //nodejieba.load({userDict:'./dict.utf8'})
 
@@ -107,6 +108,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[0]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[0]= (replytheme[0]+json[0].Summary[k].title+":\n");
                         replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n");
@@ -751,7 +753,7 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    event.reply(ans);
+    event.reply(Fjson[0][0].topic_count);
 }
 
 app.listen(process.env.PORT || 80, function () {
