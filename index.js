@@ -754,6 +754,7 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     event.reply(Fjson[0].topic_count);
+    console.log(Fjson);
 }
 
 app.listen(process.env.PORT || 80, function () {
