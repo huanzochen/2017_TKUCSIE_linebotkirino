@@ -716,7 +716,10 @@ bot.on('message', function (event) {
 					previewImageUrl: 'https://example.com/preview.jpg'
 					});
 				break;
-				default: 
+				default:
+                event.reply('yo');
+                    
+                    /*
 					event.reply([
 					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
 					{ type: 'text', text: '請點選下方選項獲取最新資訊' },
@@ -737,30 +740,8 @@ bot.on('message', function (event) {
 							}]
 						}
 					},
-					/**
-					{
-						type: 'template',
-						altText: '說明',
-						text: 'Please select',
-						template: {
-							type: 'buttons',
-							actions: [{
-								type: 'message',
-								label: '選單',
-								text: '選單'
-							}, {
-								type: 'message',
-								label: '關於我們',
-								text: '關於我們'
-							}, {
-								type: 'message',
-								label: 't1',
-								text: 't1'
-							}]
-						}
-					},
-					*/
 					]);
+                    */
 					break;
 			}
 	}
