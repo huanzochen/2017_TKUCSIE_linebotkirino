@@ -33,14 +33,13 @@ var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
-var themeC2 = 0;
 
 Getjson();
-var j = schedule.scheduleJob('5 * * * * *', function(){
+var j = schedule.scheduleJob('5 * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
-        text: replytext[rd]+'\n'+replytheme[0]
+        text: replytext[rd]+'\n'+replytheme[rd]
     });
     Getjson();
     console.log('rd:'+rd);
@@ -99,28 +98,21 @@ function Getjson(){
     replytheme=['','','','','','','','','','','','','','',''];
     console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
-        
-        for(themeC=0;themeC<theme.length;themeC++){
-            var opts = {
-                uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
-                json: true
-            };
-            rp(opts)
-            .then(function (json) {
-                console.log('在k的迴圈中themeC2='+themeC2);
-                for(var k=0;k<json[0].Summary.length;k++){
-                            replytheme[themeC2]= (replytheme[themeC2]+json[0].Summary[k].title+":\n");
-                            replytheme[themeC2]= (replytheme[themeC2]+json[0].Summary[k].excerpt+"\n");
-                }
-                themeC2++;
-            })
-            .catch(function (err) {
-                console.log('出錯了'+theme[themeC2]);
-            });
-            console.log('現在進行到第'+themeC+'輪'+'theme='+theme[themeC]+'replytheme='+replytheme[themeC]);
-        } 
-        themeC2=0;
-    /*
+
+        var opts = {
+            uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
+            json: true
+        };
+        rp(opts)
+        .then(function (json) {
+            for(var k=0;k<json[0].Summary.length;k++){
+                        replytheme[0]= (replytheme[0]+json[0].Summary[k].title+":\n");
+                        replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n");
+            }
+        })
+        .catch(function (err) {
+            console.log('出錯了食物');
+        });
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[1]+"/"+Filename+".json",
             json: true
@@ -317,7 +309,6 @@ function Getjson(){
         .catch(function (err) {
             console.log('出錯了汽車');
         });
-        */
     
 }
 
