@@ -720,7 +720,8 @@ bot.on('message', function (event) {
 				break;
 				default:
                     ans = nodejieba.cutAll(event.message.text);
-                    event.reply(ans);
+                    Workjieba(event);
+                    event.reply('xx');
                     
                     /*
 					event.reply([
@@ -749,6 +750,10 @@ bot.on('message', function (event) {
 			}
 	}
 });
+
+function Workjieba(event){
+    event.reply(ans);
+}
 
 app.listen(process.env.PORT || 80, function () {
 	console.log('LineBot is running.');
