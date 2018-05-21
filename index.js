@@ -14,7 +14,7 @@ const bot = linebot({
 const app = express();
 const linebotParser = bot.parser();
 const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
-nodejieba.load({dict: './TCdict.txt'})
+nodejieba.load({dict: 'TCdict.txt'})
 
 var makeupjson = [];
 var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男孩','經濟','遊戲','女生話題','電影','運動','旅遊','綜藝','交通工具'];
