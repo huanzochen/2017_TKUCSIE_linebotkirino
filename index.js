@@ -93,14 +93,6 @@ function Gettime(){
         return Filename;
     }
 
-function Workjson(json,themeC){
-    console.log('在k的迴圈中themeC='+themeC);
-    for(var k=0;k<json[0].Summary.length;k++){
-    replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
-    replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
-    }
-}
-
 function Getjson(){
     var themeC = 0;
     Filename = Gettime();
@@ -114,7 +106,13 @@ function Getjson(){
                 json: true
             };
             rp(opts)
-            .then(Workjson(json,themeC))
+            .then(function (json,themeC) {
+                console.log('在k的迴圈中themeC='+themeC);
+                for(var k=0;k<json[0].Summary.length;k++){
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
+                }
+            })
             .catch(function (err) {
                 console.log('出錯了'+theme[themeC]);
             });
