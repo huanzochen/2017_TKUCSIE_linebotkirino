@@ -721,7 +721,6 @@ bot.on('message', function (event) {
 				default:
                     ans = nodejieba.cutAll(event.message.text);
                     Workjieba(event);
-                    event.reply('xx');
                     
                     /*
 					event.reply([
