@@ -119,6 +119,7 @@ function Getjson(){
             });
             console.log('現在進行到第'+themeC+'輪'+'theme='+theme[themeC]+'replytheme='+replytheme[themeC]);
         } 
+        themeC2=0;
     /*
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[1]+"/"+Filename+".json",
