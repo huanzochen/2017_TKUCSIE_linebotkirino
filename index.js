@@ -719,7 +719,7 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                    ans = nodejieba.cutHMM(event.message.text);
+                    ans = nodejieba.cutAll(event.message.text);
                     event.reply(ans);
                     
                     /*
@@ -749,10 +749,6 @@ bot.on('message', function (event) {
 			}
 	}
 });
-
-function Workjieba(ans){
-    console.log(ans);
-}
 
 app.listen(process.env.PORT || 80, function () {
 	console.log('LineBot is running.');
