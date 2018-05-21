@@ -719,8 +719,8 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                    ans = nodejieba.cutAll(event.message.text);
-                    Workjieba(event);
+                    ans = nodejieba.cutHMM(event.message.text);
+                    Workjieba(event,ans);
                     
                     /*
 					event.reply([
@@ -750,7 +750,7 @@ bot.on('message', function (event) {
 	}
 });
 
-function Workjieba(event){
+function Workjieba(event,ans){
     event.reply(ans);
 }
 
