@@ -108,7 +108,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
-            Fjson=json;
+            Fjson[0]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[0]= (replytheme[0]+json[0].Summary[k].title+":\n");
                         replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n");
@@ -753,8 +753,8 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    event.reply(Fjson[0].topic_count);
-    console.log(Fjson[0].topic_count);
+    event.reply('xx');
+    console.log(Fjson[0]);
 }
 
 app.listen(process.env.PORT || 80, function () {
