@@ -720,7 +720,7 @@ bot.on('message', function (event) {
 				break;
 				default:
                     ans = nodejieba.cutAll(event.message.text);
-                    Workjieba(event);
+                    Workjieba();
                     event.reply('xx');
                     
                     /*
@@ -751,7 +751,7 @@ bot.on('message', function (event) {
 	}
 });
 
-function Workjieba(event){
+function Workjieba(){
     event.reply(ans);
 }
 
