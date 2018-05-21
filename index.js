@@ -98,21 +98,24 @@ function Getjson(){
     replytheme=['','','','','','','','','','','','','','',''];
     console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
-
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[0]= (replytheme[0]+json[0].Summary[k].title+":\n");
-                        replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了食物');
-        });
+        
+        for(var themeC=0;themeC<theme.length;themeC++){
+            var opts = {
+                uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
+                json: true
+            };
+            rp(opts)
+            .then(function (json) {
+                for(var k=0;k<json[0].Summary.length;k++){
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
+                }
+            })
+            .catch(function (err) {
+                console.log('出錯了'+theme[themeC]);
+            });
+        }
+    /*
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[1]+"/"+Filename+".json",
             json: true
@@ -309,6 +312,7 @@ function Getjson(){
         .catch(function (err) {
             console.log('出錯了汽車');
         });
+        */
     
 }
 
