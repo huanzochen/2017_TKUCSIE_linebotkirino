@@ -735,7 +735,7 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                    ans = nodejieba.cutHMM(event.message.text);
+                    ans = nodejieba.cutAll(event.message.text);
                     Workjieba(event,ans);
                     
                     /*
