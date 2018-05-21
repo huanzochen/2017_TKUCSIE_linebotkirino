@@ -39,7 +39,7 @@ var j = schedule.scheduleJob('5 * * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
-        text: replytext[rd]+'\n'+replytheme[rd]
+        text: replytext[rd]+'\n'+replytheme[0]
     });
     Getjson();
     console.log('rd:'+rd);
