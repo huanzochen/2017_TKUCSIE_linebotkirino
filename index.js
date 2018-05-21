@@ -102,10 +102,11 @@ function Getjson(){
         for(var themeC=0;themeC<theme.length;themeC++){
             var opts = {
                 uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
-                json: true
+                json: true,
+                themeC: themeC
             };
-            rp(opts,themeC)
-            .then((json,themeC) {
+            rp(opts)
+            .then(function (json,themeC) {
                 for(var k=0;k<json[0].Summary.length;k++){
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
