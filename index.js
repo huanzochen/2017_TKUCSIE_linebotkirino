@@ -100,23 +100,24 @@ function Getjson(){
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
         
         for(var themeC=0;themeC<theme.length;themeC++){
+        var themeC2=-1;
             var opts = {
                 uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
-                json: true,
-                themeC: themeC
+                json: true
             };
             rp(opts)
-            .then(function (json,themeC) {
+            .then(function (json) {
+                themeC2++;
                 for(var k=0;k<json[0].Summary.length;k++){
-                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
-                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
+                            replytheme[themeC2]= (replytheme[themeC2]+json[0].Summary[k].title+":\n");
+                            replytheme[themeC2]= (replytheme[themeC2]+json[0].Summary[k].excerpt+"\n");
                  console.log('在k的迴圈中themeC='+themeC+'在k的迴圈中themeC='+themeC);
                 }
             })
             .catch(function (err) {
                 console.log('出錯了'+theme[themeC]);
             });
-            console.log('現在進行到第'+themeC+'輪'+'themeC='+theme[themeC]+'replytheme='+replytheme[themeC]);
+            console.log('現在進行到第'+themeC+'輪'+'theme='+theme[themeC]+'replytheme='+replytheme[themeC]);
         } 
     /*
         var opts = {
