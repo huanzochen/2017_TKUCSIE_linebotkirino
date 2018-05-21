@@ -769,7 +769,9 @@ bot.on('message', function (event) {
 function Workjieba(event,ans){
     event.reply('xx');
     
-    console.log(Fjson[0][0].topic);
+    food = nodejieba.cutHMM(Fjson[0][0].topic);
+    console.log('origin'+Fjson[0][0].topic);
+    console.log('food'+food);
 }
 
 app.listen(process.env.PORT || 80, function () {
