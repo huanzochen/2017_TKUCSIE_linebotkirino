@@ -107,10 +107,10 @@ function Getjson(){
             };
             rp(opts)
             .then(function (json,themeC) {
+                console.log('在k的迴圈中themeC='+themeC);
                 for(var k=0;k<json[0].Summary.length;k++){
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
                             replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
-                 console.log('在k的迴圈中themeC='+themeC+'在k的迴圈中themeC='+themeC);
                 }
             })
             .catch(function (err) {
