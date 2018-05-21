@@ -100,17 +100,15 @@ function Getjson(){
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
         
         for(var themeC=0;themeC<theme.length;themeC++){
-        var themeC2=-1;
             var opts = {
                 uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
                 json: true
             };
             rp(opts)
-            .then(function (json) {
-                themeC2++;
+            .then(function (json,themeC) {
                 for(var k=0;k<json[0].Summary.length;k++){
-                            replytheme[themeC2]= (replytheme[themeC2]+json[0].Summary[k].title+":\n");
-                            replytheme[themeC2]= (replytheme[themeC2]+json[0].Summary[k].excerpt+"\n");
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
                  console.log('在k的迴圈中themeC='+themeC+'在k的迴圈中themeC='+themeC);
                 }
             })
