@@ -101,20 +101,20 @@ function Getjson(){
         
         for(var themeC=0;themeC<theme.length;themeC++){
             var opts = {
-                uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
+                uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
                 json: true
             };
             rp(opts)
             .then(function (json) {
                 for(var k=0;k<json[0].Summary.length;k++){
-                            replytheme[0]= (replytheme[0]+json[0].Summary[k].title+":\n");
-                            replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n");
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].title+":\n");
+                            replytheme[themeC]= (replytheme[themeC]+json[0].Summary[k].excerpt+"\n");
                 }
             })
             .catch(function (err) {
-                console.log('出錯了'+theme[0]);
+                console.log('出錯了'+theme[themeC]);
             });
-            console.log('現在進行到第'+themeC+'輪');
+            console.log('現在進行到第'+themeC+'輪'+'themeC='+theme[themeC]+'replytheme='+replytheme[themeC]);
         } 
     /*
         var opts = {
