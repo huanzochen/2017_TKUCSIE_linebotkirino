@@ -94,12 +94,13 @@ function Gettime(){
     }
 
 function Getjson(){
+    var themeC = 0;
     Filename = Gettime();
     replytheme=['','','','','','','','','','','','','','',''];
     console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
     var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
         
-        for(var themeC=0;themeC<theme.length;themeC++){
+        for(themeC=0;themeC<theme.length;themeC++){
             var opts = {
                 uri: "http://projectkarubi.hopto.org/"+theme[themeC]+"/"+Filename+".json",
                 json: true
