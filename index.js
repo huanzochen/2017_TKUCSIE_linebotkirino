@@ -123,6 +123,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[1]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[1]= (replytheme[1]+json[0].Summary[k].title+":\n");
                         replytheme[1]= (replytheme[1]+json[0].Summary[k].excerpt+"\n");
@@ -137,6 +138,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[2]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[2]= (replytheme[2]+json[0].Summary[k].title+":\n");
                         replytheme[2]= (replytheme[2]+json[0].Summary[k].excerpt+"\n");
@@ -151,6 +153,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[3]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[3]= (replytheme[3]+json[0].Summary[k].title+":\n");
                         replytheme[3]= (replytheme[3]+json[0].Summary[k].excerpt+"\n");
@@ -165,6 +168,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[4]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[4]= (replytheme[4]+json[0].Summary[k].title+":\n");
                         replytheme[4]= (replytheme[4]+json[0].Summary[k].excerpt+"\n");
@@ -179,6 +183,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[5]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[5]= (replytheme[5]+json[0].Summary[k].title+":\n");
                         replytheme[5]= (replytheme[5]+json[0].Summary[k].excerpt+"\n");
@@ -193,6 +198,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[6]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[6]= (replytheme[6]+json[0].Summary[k].title+":\n");
                         replytheme[6]= (replytheme[6]+json[0].Summary[k].excerpt+"\n");
@@ -207,6 +213,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[7]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[7]= (replytheme[7]+json[0].Summary[k].title+":\n");
                         replytheme[7]= (replytheme[7]+json[0].Summary[k].excerpt+"\n");
@@ -221,6 +228,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[8]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[8]= (replytheme[8]+json[0].Summary[k].title+":\n");
                         replytheme[8]= (replytheme[8]+json[0].Summary[k].excerpt+"\n");
@@ -235,6 +243,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[9]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[9]= (replytheme[9]+json[0].Summary[k].title+":\n");
                         replytheme[9]= (replytheme[9]+json[0].Summary[k].excerpt+"\n");
@@ -249,6 +258,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[10]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[10]= (replytheme[10]+json[0].Summary[k].title+":\n");
                         replytheme[10]= (replytheme[10]+json[0].Summary[k].excerpt+"\n");
@@ -263,6 +273,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[11]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[11]= (replytheme[11]+json[0].Summary[k].title+":\n");
                         replytheme[11]= (replytheme[11]+json[0].Summary[k].excerpt+"\n");
@@ -277,6 +288,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[12]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[12]= (replytheme[12]+json[0].Summary[k].title+":\n");
                         replytheme[12]= (replytheme[12]+json[0].Summary[k].excerpt+"\n");
@@ -291,6 +303,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[13]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[13]= (replytheme[13]+json[0].Summary[k].title+":\n");
                         replytheme[13]= (replytheme[13]+json[0].Summary[k].excerpt+"\n");
@@ -305,6 +318,7 @@ function Getjson(){
         };
         rp(opts)
         .then(function (json) {
+            Fjson[14]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[14]= (replytheme[14]+json[0].Summary[k].title+":\n");
                         replytheme[14]= (replytheme[14]+json[0].Summary[k].excerpt+"\n");
@@ -754,7 +768,8 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     event.reply('xx');
-    console.log(Fjson[0][0].Summary[1].title);
+    
+    console.log(Fjson[0][0].topic);
 }
 
 app.listen(process.env.PORT || 80, function () {
