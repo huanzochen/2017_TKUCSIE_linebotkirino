@@ -2,6 +2,7 @@ const linebot = require('linebot');
 const express = require('express');
 var schedule = require('node-schedule');
 const rp = require('request-promise');
+const nodejieba = require('nodejieba');
 //var rp = require('request-promise');
 
 const bot = linebot({
