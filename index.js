@@ -112,7 +112,7 @@ function Getjson(){
                 }
             })
             .catch(function (err) {
-                console.log('出錯了'+theme[themeC]);
+                console.log('出錯了'+theme[0]);
             });
        // } 
     /*
