@@ -717,7 +717,7 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                event.reply('yo');
+                event.reply(event.message.text);
                     
                     /*
 					event.reply([
