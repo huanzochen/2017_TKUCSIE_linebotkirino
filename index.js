@@ -787,7 +787,8 @@ function Workjieba(event,ans){
     
     //for(var t=0;t<Fjson[0].length;t++){
      //   for(var tk=0;tk<=Fjson[0][0].length;tk++){
-            Kfood = (Fjson[0][0].topic).split(" ");    
+            Kfood = (Fjson[0][0].topic).split(" ");
+        Kfood = (Fjson[0][1].topic).split(" ");
     //    }
     //}
     //Fjson[0][0].topic.length;
