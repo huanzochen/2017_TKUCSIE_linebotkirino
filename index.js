@@ -776,14 +776,14 @@ function Workjieba(event,ans){
     var K3c = new Array;
     var Kanimate = new Array;
     var Kboy = new Array;
+    var Kfinance = new Array;
+    var Kgame = new Array;
     var Kgirl = new Array;
-    var food = new Array;
-    var food = new Array;
-    var food = new Array;
-    var food = new Array;
-    var food = new Array;
-    var food = new Array;
-    var food = new Array;
+    var Kmovie = new Array;
+    var Ksport = new Array;
+    var Ktravel = new Array;
+    var Ktvepisode = new Array;
+    var Kvehicle = new Array;
     
     //Fjson[0][0].topic.length;
     
