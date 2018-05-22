@@ -492,7 +492,7 @@ bot.on('message', function (event) {
 						altText: '選單',
 						template: {
 						type: 'buttons',
-						title: '主題',
+						title: '生活',
 						text: '請選擇主題',
 						actions: [{
 							type: 'message',
@@ -521,7 +521,7 @@ bot.on('message', function (event) {
 						altText: '選單',
 						template: {
 						type: 'buttons',
-						title: '主題',
+						title: '潮流',
 						text: '請選擇主題',
 						actions: [{
 							type: 'message',
@@ -550,7 +550,7 @@ bot.on('message', function (event) {
 						altText: '選單',
 						template: {
 						type: 'buttons',
-						title: '主題',
+						title: '娛樂',
 						text: '請選擇主題',
 						actions: [{
 							type: 'message',
@@ -579,7 +579,7 @@ bot.on('message', function (event) {
 						altText: '選單',
 						template: {
 						type: 'buttons',
-						title: '主題',
+						title: '八卦',
 						text: '請選擇主題',
 						actions: [{
 							type: 'message',
