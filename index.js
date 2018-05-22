@@ -770,8 +770,8 @@ function Workjieba(event,ans){
     event.reply('aaaaa');
     
     var Key = new Object;
-    Key[0][0] = Fjson[0][0].topic;
-    Key[0][1] = Fjson[0][1].topic;
+    Key.Food[0] = Fjson[0][0].topic;
+    Key.Food[1] = Fjson[0][1].topic;
     
     
     
