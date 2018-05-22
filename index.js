@@ -769,8 +769,8 @@ bot.on('message', function (event) {
 function Workjieba(event,ans){
     event.reply('aaaaa');
     
-    
-    var Key[0][0] = Fjson[0][0].topic;
+    var Key = new Object;
+    Key[0][0] = Fjson[0][0].topic;
     Key[0][1] = Fjson[0][1].topic;
     
     
