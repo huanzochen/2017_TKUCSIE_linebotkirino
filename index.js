@@ -512,10 +512,7 @@ bot.on('message', function (event) {
 							text: '美妝新聞'
 						}]
 						}
-					}]
-						}
-					},
-					]);
+					}]);
 					break;
                 case '潮流': 
 					event.reply([
@@ -544,10 +541,7 @@ bot.on('message', function (event) {
 							text: '運動新聞'
 						}]
 						}
-					}]
-						}
-					},
-					]);
+					}]);
 					break;
                 case '娛樂': 
 					event.reply([
@@ -576,10 +570,7 @@ bot.on('message', function (event) {
 							text: '電影新聞'
 						}]
 						}
-					}]
-						}
-					},
-					]);
+					}]);
 					break;
                 case '八卦': 
 					event.reply([
@@ -604,10 +595,7 @@ bot.on('message', function (event) {
 							text: '閒聊話題'
 						}]
 						}
-					}]
-						}
-					},
-					]);
+					}]);
 					break;
                 case '選單2':
                     
