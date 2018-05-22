@@ -16,7 +16,7 @@ const linebotParser = bot.parser();
 const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
 
 var makeupjson = [];
-var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男孩','經濟','遊戲','女生話題','電影','運動','旅遊','綜藝','交通工具'];
+var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男生','經濟','遊戲','女生','電影','運動','旅遊','綜藝','汽車'];
 var replyfood = '';
 var replymakeup = '';
 var replybuyonline = '';
@@ -768,7 +768,6 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     event.reply('aaaaa');
-    var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男孩','經濟','遊戲','女生話題','電影','運動','旅遊','綜藝','交通工具'];
     var Kfood = new Array;
     var Kmakeup = new Array;
     var Kbuyonline = new Array;
