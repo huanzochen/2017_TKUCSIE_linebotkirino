@@ -767,7 +767,7 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    event.reply('aaaa');
+    event.reply('aaaaa');
     
     food = nodejieba.cut(Fjson[0][0].topic);
     console.log('origin'+Fjson[0][0].topic);
