@@ -770,13 +770,13 @@ function Workjieba(event,ans){
     event.reply('aaaaa');
     
     var Key = new Object;
-    Key.Food[0] = Fjson[0][0].topic;
-    Key.Food[1] = Fjson[0][1].topic;
+    Key.food[0] = Fjson[0][0].topic;
+    Key.food[1] = Fjson[0][1].topic;
     
     
     
-    console.log('food'+Key[0][0]);
-    console.log('food'+Key[0][1]);
+    console.log('food'+Key.food[0]);
+    console.log('food'+Key.food[1]);
 }
 
 app.listen(process.env.PORT || 80, function () {
