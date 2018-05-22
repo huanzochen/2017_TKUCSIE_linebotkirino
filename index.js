@@ -769,9 +769,14 @@ bot.on('message', function (event) {
 function Workjieba(event,ans){
     event.reply('aaaaa');
     
-    food = nodejieba.cut(Fjson[0][0].topic);
-    console.log('origin'+Fjson[0][0].topic);
-    console.log('food'+food);
+    
+    var Key[0][0] = Fjson[0][0].topic;
+    var Key[0][1] = Fjson[0][1].topic;
+    
+    
+
+    console.log('food'+Key[0][0]);
+    console.log('food'+Key[0][1]);
 }
 
 app.listen(process.env.PORT || 80, function () {
