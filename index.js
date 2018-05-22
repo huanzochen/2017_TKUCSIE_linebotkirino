@@ -768,15 +768,30 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     event.reply('aaaaa');
+    var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男孩','經濟','遊戲','女生話題','電影','運動','旅遊','綜藝','交通工具'];
+    var Kfood = new Array;
+    var Kmakeup = new Array;
+    var Kbuyonline = new Array;
+    var Ktalk = new Array;
+    var K3c = new Array;
+    var Kanimate = new Array;
+    var Kboy = new Array;
+    var Kgirl = new Array;
+    var food = new Array;
+    var food = new Array;
+    var food = new Array;
+    var food = new Array;
+    var food = new Array;
+    var food = new Array;
+    var food = new Array;
     
-    var Key = new Object;
-    Key.food.append(Fjson[0][0].topic);
-    Key.food[1].append(Fjson[0][1].topic);
+    //Fjson[0][0].topic.length;
+    
     
     
     
     console.log('food'+Key.food[0]);
-    console.log('food'+Key.food[1]);
+    console.log('topic.length'+Fjson[0][0].topic.length);
 }
 
 app.listen(process.env.PORT || 80, function () {
