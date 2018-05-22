@@ -785,13 +785,18 @@ function Workjieba(event,ans){
     var Ktvepisode = new Array;
     var Kvehicle = new Array;
     
+    
+    //for(var t=0;t<Fjson[0].length;t++){
+        for(var tk=0;t<Fjson[0][0].length;tk++){
+            Kfood = (Fjson[0][0].topic).split(" ");    
+        }
+    //}
     //Fjson[0][0].topic.length;
     
     
     
     
-    console.log('food'+Key.food[0]);
-    console.log('topic.length'+Fjson[0][0].topic.length);
+    console.log('topic.length'+Fjson[0][0].topic.length+'sssss'+Kfood);
 }
 
 app.listen(process.env.PORT || 80, function () {
