@@ -771,10 +771,10 @@ function Workjieba(event,ans){
     
     
     var Key[0][0] = Fjson[0][0].topic;
-    var Key[0][1] = Fjson[0][1].topic;
+    Key[0][1] = Fjson[0][1].topic;
     
     
-
+    
     console.log('food'+Key[0][0]);
     console.log('food'+Key[0][1]);
 }
