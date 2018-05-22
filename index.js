@@ -533,8 +533,8 @@ bot.on('message', function (event) {
 							text: '汽車新聞'
 						}, {
 							type: 'message',
-							label: '經濟',
-							text: '經濟新聞'
+							label: '金融',
+							text: '金融新聞'
 						}, {
 							type: 'message',
 							label: '運動',
