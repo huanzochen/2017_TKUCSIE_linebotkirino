@@ -907,7 +907,7 @@ function Workjieba(event,ans){
     
     
     
-    console.log('topic.length'+Fjson[0][0].topic.length+'ssssssssssssssss'+Kfood);
+    console.log('topic.length'+Fjson[0][0].topic.length+'sssssssssss'+Kfood);
 }
 
 app.listen(process.env.PORT || 80, function () {
