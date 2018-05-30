@@ -122,7 +122,7 @@ function Getjson(thmct){
             Getjson((thmct+1));
         })
         .catch(function (err) {
-            console.log('出錯了食物');
+            console.log('出錯了'+theme[thmct]);
         });
 
         
