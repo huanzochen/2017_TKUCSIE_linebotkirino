@@ -39,6 +39,7 @@ var thmct = 0
 //nodejieba.load({userDict:'./dict.utf8'})
 
 Getjson(thmct);
+/**
 var j = schedule.scheduleJob('5 * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
@@ -50,7 +51,7 @@ var j = schedule.scheduleJob('5 * * * *', function(){
     Getjson();
     console.log('rd:'+rd);
 });
-
+*/
 
 function Gettime(){
         var today=new Date();
@@ -103,7 +104,7 @@ function Gettime(){
 theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
 
 function Getjson(thmct){
-    Filename = Gettime();
+    //Filename = Gettime();
     Filename = '201805302120';
     
     console.log(thmct+"http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json");
