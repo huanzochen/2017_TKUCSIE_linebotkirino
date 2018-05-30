@@ -693,7 +693,7 @@ bot.on('message', function (event) {
 					});
 				break;
 				default:
-                    ans = nodejieba.cutAll(event.message.text);
+                    ans = nodejieba.cutHMM(event.message.text);
                     Workjieba(event,ans);
 					break;
 			}
@@ -701,10 +701,12 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    //event.reply(ans);
-    console.log('綜藝'+(replytheme[13][0].length)+replytheme[13][0]);
-    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-    console.log('\n綜藝2:\n'+(replytheme[13][1].length)+'你有問題嗎媽嗎?'+replytheme[13][1]);
+    event.reply(ans);
+
+        Kfood = (Fjson[0][0].topic[0]);
+        Kfood2 = (Fjson[0][0].topic);
+        console.log('Kfood:'+Kfood+'Kfood2:'+Kfood2);
+
     /*
     var Kfood = new Array;
     var Kmakeup = new Array;
@@ -722,13 +724,6 @@ function Workjieba(event,ans){
     var Ktvepisode = new Array;
     var Kvehicle = new Array;
     */
-    
-
-        Kfood = (Fjson[0][0].topic[0]);
-        Kfood2 = (Fjson[0][0].topic);
-        console.log('Kfood:'+Kfood+'Kfood2:'+Kfood2);
-
-    
     
     
     
