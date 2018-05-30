@@ -116,7 +116,7 @@ function Getjson(thmct){
         rp(opts)
         .then(function (json) {
             Fjson[thmct]=json;
-            for(var k=0;k<json[thmct].Summary.length;k++){
+            for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].title+":\n");
                         replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].excerpt+"\n----------\n");
             }
