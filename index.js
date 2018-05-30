@@ -120,11 +120,10 @@ function Getjson(thmct){
                         replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].title+":\n");
                         replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].excerpt+"\n----------\n");
             }
-            if(thmct<=14){
+            if(thmct<14){
                 Getjson((thmct+1));  
             }
-            else if(thmct>=15){
-
+            else if(thmct>=14){
             }
             else{
                 console.log('在資料儲存過程中出現未知錯誤!');
