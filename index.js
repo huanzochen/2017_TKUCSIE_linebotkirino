@@ -39,6 +39,20 @@ var thmct = 0
 //nodejieba.load({userDict:'./dict.utf8'})
 
 Getjson(thmct);
+
+var rule = new schedule.RecurrenceRule();  
+rule.minute = [0,10,20,30,40,50];
+var j = schedule.scheduleJob(rule, function(){  
+    var rd = Math.floor(Math.random()*15);
+    bot.push(users, {
+        type: 'text',
+        text: replytext[rd]+'\n'+replytheme[rd]
+    });
+    replytheme=['','','','','','','','','','','','','','',''];
+    thmct = 0;
+    Getjson(thmct);
+    console.log('rd:'+rd);
+});
 /**
 var j = schedule.scheduleJob('5 * * * *', function(){
     var rd = Math.floor(Math.random()*15);
@@ -101,8 +115,6 @@ function Gettime(){
     }
 
 
-theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
-
 function Getjson(thmct){
     //Filename = Gettime();
     Filename = '201805302120';
@@ -128,7 +140,6 @@ function Getjson(thmct){
             else{
                 console.log('在資料儲存過程中出現未知錯誤!');
             }
-            
         })
         .catch(function (err) {
             console.log(err);
