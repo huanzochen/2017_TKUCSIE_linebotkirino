@@ -34,16 +34,19 @@ var replytvepisode = '';
 var replyvehicle = '';
 var replytheme=['','','','','','','','','','','','','','',''];
 var Fjson = new Object;
-
+var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
+var thmct = 0
 //nodejieba.load({userDict:'./dict.utf8'})
 
-Getjson();
+Getjson(thmct);
 var j = schedule.scheduleJob('5 * * * *', function(){
     var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
         text: replytext[rd]+'\n'+replytheme[rd]
     });
+    replytheme=['','','','','','','','','','','','','','',''];
+    thmct = 0;
     Getjson();
     console.log('rd:'+rd);
 });
@@ -96,238 +99,33 @@ function Gettime(){
         return Filename;
     }
 
-function Getjson(){
+
+theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
+
+function Getjson(thmct){
     Filename = Gettime();
     Filename = '201805302120';
-    //replytheme=['','','','','','','','','','','','','','',''];
+    
     console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
-    var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
 
         var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[0]+"/"+Filename+".json",
+            uri: "http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json",
             json: true
         };
         rp(opts)
         .then(function (json) {
-            Fjson[0]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[0]= (replytheme[0]+json[0].Summary[k].title+":\n");
-                        replytheme[0]= (replytheme[0]+json[0].Summary[k].excerpt+"\n----------\n");
+            Fjson[thmct]=json;
+            for(var k=0;k<json[thmct].Summary.length;k++){
+                        replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].title+":\n");
+                        replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].excerpt+"\n----------\n");
             }
+            Getjson(thmct++);
         })
         .catch(function (err) {
             console.log('出錯了食物');
         });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[1]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[1]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[1]= (replytheme[1]+json[0].Summary[k].title+":\n");
-                        replytheme[1]= (replytheme[1]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了美妝');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[2]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[2]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[2]= (replytheme[2]+json[0].Summary[k].title+":\n");
-                        replytheme[2]= (replytheme[2]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了購物');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[3]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[3]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[3]= (replytheme[3]+json[0].Summary[k].title+":\n");
-                        replytheme[3]= (replytheme[3]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了閒聊');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[4]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[4]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[4]= (replytheme[4]+json[0].Summary[k].title+":\n");
-                        replytheme[4]= (replytheme[4]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了3c');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[5]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[5]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[5]= (replytheme[5]+json[0].Summary[k].title+":\n");
-                        replytheme[5]= (replytheme[5]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了ACG');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[6]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[6]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[6]= (replytheme[6]+json[0].Summary[k].title+":\n");
-                        replytheme[6]= (replytheme[6]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了男生');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[7]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[7]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[7]= (replytheme[7]+json[0].Summary[k].title+":\n");
-                        replytheme[7]= (replytheme[7]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了金融');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[8]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[8]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[8]= (replytheme[8]+json[0].Summary[k].title+":\n");
-                        replytheme[8]= (replytheme[8]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了遊戲');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[9]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[9]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[9]= (replytheme[9]+json[0].Summary[k].title+":\n");
-                        replytheme[9]= (replytheme[9]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了女森');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[10]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[10]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[10]= (replytheme[10]+json[0].Summary[k].title+":\n");
-                        replytheme[10]= (replytheme[10]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了電影');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[11]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[11]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[11]= (replytheme[11]+json[0].Summary[k].title+":\n");
-                        replytheme[11]= (replytheme[11]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了運動');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[12]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[12]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[12]= (replytheme[12]+json[0].Summary[k].title+":\n");
-                        replytheme[12]= (replytheme[12]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了旅遊');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[13]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[13]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[13]= (replytheme[13]+json[0].Summary[k].title+":\n");
-                        replytheme[13]= (replytheme[13]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了綜藝');
-        });
-        var opts = {
-            uri: "http://projectkarubi.hopto.org/"+theme[14]+"/"+Filename+".json",
-            json: true
-        };
-        rp(opts)
-        .then(function (json) {
-            Fjson[14]=json;
-            for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[14]= (replytheme[14]+json[0].Summary[k].title+":\n");
-                        replytheme[14]= (replytheme[14]+json[0].Summary[k].excerpt+"\n----------\n");
-            }
-        })
-        .catch(function (err) {
-            console.log('出錯了汽車');
-        });
+
+        
     
 }
 
@@ -855,7 +653,7 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    event.reply(ans);
+    //event.reply(ans);
     console.log('綜藝'+(replytheme[13].length)+'\nACG5:'+(replytheme[5].length)+'\nreplytheme[5]'+replytheme[5]);
     /*
     var Kfood = new Array;
