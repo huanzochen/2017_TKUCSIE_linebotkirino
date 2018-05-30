@@ -106,7 +106,7 @@ function Getjson(thmct){
     Filename = Gettime();
     Filename = '201805302120';
     
-    console.log(thmct+thmct+thmct+thmct+"http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json");
+    console.log(thmct+"http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json");
 
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json",
@@ -119,7 +119,7 @@ function Getjson(thmct){
                         replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].title+":\n");
                         replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].excerpt+"\n----------\n");
             }
-            Getjson(thmct++);
+            Getjson((thmct+1));
         })
         .catch(function (err) {
             console.log('出錯了食物');
