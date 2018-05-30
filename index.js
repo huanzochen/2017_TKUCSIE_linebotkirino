@@ -138,12 +138,22 @@ function Getjson(thmct){
             Fjson[thmct]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         if(replytheme[thmct][thmlen].length<=1300){
-                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
+                            if(json[0].Summary[k].title==undefined){
+                                replytheme[thmct][thmlen]= ("(無標題):\n");
+                            }
+                            else{
+                                replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
+                            }
                             replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
                         }
                         else if(replytheme[thmct][thmlen].length>=1300){
                             thmlen++;
-                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
+                            if(json[0].Summary[k].title==undefined){
+                                replytheme[thmct][thmlen]= ("(無標題)\n");
+                            }
+                            else{
+                                replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
+                            }
                             replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
                         }
             }
@@ -481,15 +491,15 @@ bot.on('message', function (event) {
                       }
                     });
 					break;
-                case '美妝新聞':
-                    //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replytheme[1]);
-                    console.log('xxx'+replytheme[1]);
-                    break;
                 case '美食新聞':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[0]);
                     console.log('xxx'+replytheme[0]);
+                    break;
+                case '美妝新聞':
+                    //event.reply(json[0].Summary[0].excerpt);
+                    event.reply(replytheme[1]);
+                    console.log('xxx'+replytheme[1]);
                     break;
                 case '閒聊話題':
                     //event.reply(json[0].Summary[0].excerpt);
