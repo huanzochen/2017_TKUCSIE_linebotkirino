@@ -136,10 +136,10 @@ function Getjson(thmct){
         .then(function (json) {
             Fjson[thmct]=json;
 
-
             for(var k=0;k<json[0].Summary.length;k++){
                         replytheme[thmct][0]= (replytheme[thmct][0]+json[0].Summary[k].title+":\n");
                         replytheme[thmct][0]= (replytheme[thmct][0]+json[0].Summary[k].excerpt+"\n----------\n");
+                        //if(replytheme[thmct][0].length>1000);
             }
             if(thmct<14){
                 Getjson((thmct+1));  
@@ -684,7 +684,7 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     //event.reply(ans);
-    console.log('綜藝'+(replytheme[13].length)+'\nACG5:'+(replytheme[5].length)+'\nreplytheme[5]'+replytheme[5]);
+    console.log('綜藝'+(replytheme[13][0].length)+'\nACG(5)的長度:'+(replytheme[5][0].length)+'\nreplytheme[5]'+replytheme[5]);
     /*
     var Kfood = new Array;
     var Kmakeup = new Array;
