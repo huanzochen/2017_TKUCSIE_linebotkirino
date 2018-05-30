@@ -690,7 +690,9 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     //event.reply(ans);
-    console.log('綜藝'+(replytheme[13][0].length)+replytheme[13][0]+'\n綜藝2:\n'+(replytheme[13][1].length)+replytheme[13][1]);
+    console.log('綜藝'+(replytheme[13][0].length)+replytheme[13][0]);
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+    console.log('\n綜藝2:\n'+(replytheme[13][1].length)+replytheme[13][1]);
     /*
     var Kfood = new Array;
     var Kmakeup = new Array;
