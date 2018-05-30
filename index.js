@@ -849,37 +849,13 @@ bot.on('message', function (event) {
 				default:
                     ans = nodejieba.cutAll(event.message.text);
                     Workjieba(event,ans);
-                    
-                    /*
-					event.reply([
-					{ type: 'text', text: '哈囉!歡迎使用新聞機器人!' },
-					{ type: 'text', text: '請點選下方選項獲取最新資訊' },
-					{
-						type: 'template',
-						altText: '選項',
-						template: {
-						type: 'buttons',
-						text: '選項',
-						actions: [{
-								type: 'message',
-								label: '選單',
-								text: '選單'
-							}, {
-								type: 'message',
-								label: '關於我們',
-								text: '關於我們'
-							}]
-						}
-					},
-					]);
-                    */
 					break;
 			}
 	}
 });
 
 function Workjieba(event,ans){
-    event.reply('x');
+    event.reply(ans);
     console.log('綜藝'+(replytheme[13].length)+'\nACG5:'+(replytheme[5].length)+'\nreplytheme[5]'+replytheme[5];
     /*
     var Kfood = new Array;
