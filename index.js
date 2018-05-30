@@ -148,6 +148,7 @@ function Getjson(thmct){
                         }
                         else if(replytheme[thmct][thmlen].length>=1300){
                             thmlen++;
+                            replytheme[thmct][thmlen]=[''];
                             if(json[0].Summary[k].title==''){
                                 replytheme[thmct][thmlen]= ("(無標題)\n");
                             }
