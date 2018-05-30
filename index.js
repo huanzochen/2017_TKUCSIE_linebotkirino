@@ -878,7 +878,8 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    event.reply('aaaaa');
+    event.reply('1000asdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdghjkfgdhsjkfdhgskjfdghslkjfghdsjkfhdgslkjfgdhjklfgdhjkfdhkjfgdshkjfgdhjkfdghasdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdghjkfgdhsjkfdhgskjfdghslkjfghdsjkfhdgslkjfgdhjklfgdhjkfdhkjfgdshkjfgdhjkfdghasdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdghjkfgdhsjkfdhgskjfdghslkjfghdsjkfhdgslkjfgdhjklfgdhjkfdhkjfgdshkjfgdhjkfdghasdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdghjkfgdhsjkfdhgskjfdghslkjfghdsjkfhdgslkjfgdhjklfgdhjkfdhkjfgdshkjfgdhjkfdghasdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdghjkfgdhsjkfdhgskjfdghslkjfghdsjkfhdgslkjfgdhjklfgdhjkfdhkjfgdshkjfgdhjkfdghasdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdasdddsadsasdasadsadsadsasdadsadsadsadsadflkfhdskjl;ghflkjfsdhgkgfhsdkjfgdhskjlfdgshjkfdghjkfgdhsjkfdhgskjfdghslkjfghdsjkfhdgslkjfgdhjklfgdhjkfdhkjfgdshkjfgdhjkfdgh');
+    /*
     var Kfood = new Array;
     var Kmakeup = new Array;
     var Kbuyonline = new Array;
@@ -894,20 +895,18 @@ function Workjieba(event,ans){
     var Ktravel = new Array;
     var Ktvepisode = new Array;
     var Kvehicle = new Array;
+    */
     
-    
-    //for(var t=0;t<Fjson[0].length;t++){
-     //   for(var tk=0;tk<=Fjson[0][0].length;tk++){
-            Kfood = (Fjson[0][0].topic).split(" ");
-        Kfood = (Fjson[0][1].topic).split(" ");
-    //    }
-    //}
-    //Fjson[0][0].topic.length;
+
+        Kfood = (Fjson[0][0].topic[0]);
+        Kfood2 = (Fjson[0][0].topic);
+        console.log('Kfood:'+Kfood+'Kfood2:'+Kfood2);
+
     
     
     
     
-    console.log('topic.length'+Fjson[0][0].topic.length+'sssssssssss'+Kfood);
+    console.log('\ntopic.length'+Fjson[0][0].topic.length+'sssssssssss');
 }
 
 app.listen(process.env.PORT || 80, function () {
