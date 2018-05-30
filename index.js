@@ -144,7 +144,7 @@ function Getjson(thmct){
                             else{
                                 replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
                             }
-                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
+                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------------------------------------\n");
                         }
                         else if(replytheme[thmct][thmlen].length>=1300){
                             thmlen++;
@@ -155,7 +155,7 @@ function Getjson(thmct){
                             else{
                                 replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
                             }
-                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
+                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------------------------------------\n");
                         }
             }
             if(thmct<14){
