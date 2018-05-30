@@ -154,7 +154,7 @@ function Getjson(thmct){
                             else{
                                 replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
                             }
-                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
+                            replytheme[thmct][thmlen]= (json[0].Summary[k].excerpt+"\n----------\n");
                         }
             }
             if(thmct<14){
@@ -558,10 +558,8 @@ bot.on('message', function (event) {
                     break;
                 case '綜藝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    for(var cc = 0;cc<replytheme[13].length;cc++){
-                        event.reply(replytheme[13][cc]);
-                        console.log('xxx'+replytheme[13][cc]);
-                    }
+                        event.reply(replytheme[13]);
+                        console.log('xxx'+replytheme[13]);
                     
                     break;
                 case '汽車新聞':
