@@ -690,7 +690,7 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     //event.reply(ans);
-    console.log('綜藝'+(replytheme[13][0].length)+'\nACG(5)的長度:'+(replytheme[5][0].length)+'\nreplytheme[5]'+replytheme[5]);
+    console.log('綜藝'+(replytheme[13][0].length)+replytheme[13][0]+'\n綜藝2:\n'+(replytheme[13][1].length)+replytheme[13][1]);
     /*
     var Kfood = new Array;
     var Kmakeup = new Array;
