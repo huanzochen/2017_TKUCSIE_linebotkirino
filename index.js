@@ -32,16 +32,15 @@ var replysport = '';
 var replytravel = '';
 var replytvepisode = '';
 var replyvehicle = '';
-var replytheme=['','','','','','','','','','','','','','',''];
+var replytheme=new Array(15);
 var Fjson = new Object;
 var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
 var thmct = 0
 var Filename = [];
-Filename = Gettime();
-Filename = '201805302120';
 //nodejieba.load({userDict:'./dict.utf8'})
-
-Getjson(thmct);
+//Filename = Gettime();
+Filename = '201805302120';
+Messuparray();
 
 var rule = new schedule.RecurrenceRule();  
 rule.minute = [0,10,20,30,40,50];
@@ -53,8 +52,8 @@ var j = schedule.scheduleJob(rule, function(){
     });
     replytheme=['','','','','','','','','','','','','','',''];
     thmct = 0;
-    Getjson(thmct);
     Filename = Gettime();
+    Messuparray();
     console.log('rd:'+rd);
 });
 /**
@@ -70,6 +69,14 @@ var j = schedule.scheduleJob('5 * * * *', function(){
     console.log('rd:'+rd);
 });
 */
+
+function Messuparray(){
+    replytheme=new Array(15);
+    for(var s=0;s<15;s++){
+            replytheme[s]=[''];
+    }
+    Getjson(thmct);
+}
 
 function Gettime(){
         var today=new Date();
@@ -115,7 +122,7 @@ function Gettime(){
         //console.log(Filename); //檔案名稱
         console.log(Filename);
         return Filename;
-    }
+}
 
 
 function Getjson(thmct){
@@ -128,9 +135,11 @@ function Getjson(thmct){
         rp(opts)
         .then(function (json) {
             Fjson[thmct]=json;
+
+
             for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].title+":\n");
-                        replytheme[thmct]= (replytheme[thmct]+json[0].Summary[k].excerpt+"\n----------\n");
+                        replytheme[thmct][0]= (replytheme[thmct][0]+json[0].Summary[k].title+":\n");
+                        replytheme[thmct][0]= (replytheme[thmct][0]+json[0].Summary[k].excerpt+"\n----------\n");
             }
             if(thmct<14){
                 Getjson((thmct+1));  
