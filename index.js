@@ -106,7 +106,7 @@ function Getjson(thmct){
     Filename = Gettime();
     Filename = '201805302120';
     
-    console.log("http://projectkarubi.hopto.org/"+'talk/Food'+"/"+Filename+".json");
+    console.log('thmct'+'thmct'+'thmct'+'thmct'+"http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json");
 
         var opts = {
             uri: "http://projectkarubi.hopto.org/"+theme[thmct]+"/"+Filename+".json",
