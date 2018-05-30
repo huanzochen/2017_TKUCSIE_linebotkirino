@@ -134,12 +134,18 @@ function Getjson(thmct){
         };
         rp(opts)
         .then(function (json) {
+            var thmlen = 0;
             Fjson[thmct]=json;
-
             for(var k=0;k<json[0].Summary.length;k++){
-                        replytheme[thmct][0]= (replytheme[thmct][0]+json[0].Summary[k].title+":\n");
-                        replytheme[thmct][0]= (replytheme[thmct][0]+json[0].Summary[k].excerpt+"\n----------\n");
-                        //if(replytheme[thmct][0].length>1000);
+                        if(replytheme[thmct][thmlen].length<=1300){
+                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
+                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
+                        }
+                        else if(replytheme[thmct][thmlen].length>=1300){
+                            thmlen++;
+                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].title+":\n");
+                            replytheme[thmct][thmlen]= (replytheme[thmct][thmlen]+json[0].Summary[k].excerpt+"\n----------\n");
+                        }
             }
             if(thmct<14){
                 Getjson((thmct+1));  
