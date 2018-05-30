@@ -880,7 +880,7 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     event.reply('x');
-    console.log('綜藝'+replytheme[13].length+'\nACG5'+replytheme[5].length);
+    console.log('綜藝'+(replytheme[13].length)+'\nACG5:'+(replytheme[5].length)+'\nreplytheme[5]'+replytheme[5];
     /*
     var Kfood = new Array;
     var Kmakeup = new Array;
@@ -908,7 +908,7 @@ function Workjieba(event,ans){
     
     
     
-    console.log('\ntopic.length'+Fjson[0][0].topic.length+'sssssssssss');
+    
 }
 
 app.listen(process.env.PORT || 80, function () {
