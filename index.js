@@ -138,7 +138,7 @@ function Getjson(thmct){
             Fjson[thmct]=json;
             for(var k=0;k<json[0].Summary.length;k++){
                         if(replytheme[thmct][thmlen].length<=1300){
-                            if(json[0].Summary[k].title==undefined){
+                            if(json[0].Summary[k].title==''){
                                 replytheme[thmct][thmlen]= ("(無標題):\n");
                             }
                             else{
@@ -148,7 +148,7 @@ function Getjson(thmct){
                         }
                         else if(replytheme[thmct][thmlen].length>=1300){
                             thmlen++;
-                            if(json[0].Summary[k].title==undefined){
+                            if(json[0].Summary[k].title==''){
                                 replytheme[thmct][thmlen]= ("(無標題)\n");
                             }
                             else{
