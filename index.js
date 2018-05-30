@@ -856,7 +856,7 @@ bot.on('message', function (event) {
 
 function Workjieba(event,ans){
     event.reply(ans);
-    console.log('綜藝'+(replytheme[13].length)+'\nACG5:'+(replytheme[5].length)+'\nreplytheme[5]'+replytheme[5];
+    console.log('綜藝'+(replytheme[13].length)+'\nACG5:'+(replytheme[5].length)+'\nreplytheme[5]'+replytheme[5]);
     /*
     var Kfood = new Array;
     var Kmakeup = new Array;
