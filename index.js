@@ -123,6 +123,7 @@ function Getjson(thmct){
             Getjson((thmct+1));
         })
         .catch(function (err) {
+            console.log(err);
             console.log('出錯了'+theme[thmct]);
         });
 
