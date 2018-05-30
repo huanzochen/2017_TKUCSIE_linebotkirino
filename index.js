@@ -558,8 +558,11 @@ bot.on('message', function (event) {
                     break;
                 case '綜藝新聞':
                     //event.reply(json[0].Summary[0].excerpt);
-                    event.reply(replytheme[13]);
-                    console.log('xxx'+replytheme[13]);
+                    for(var cc = 0;cc<replytheme[13].length;cc++){
+                        event.reply(replytheme[13][cc]);
+                        console.log('xxx'+replytheme[13][cc]);
+                    }
+                    
                     break;
                 case '汽車新聞':
                     //event.reply(json[0].Summary[0].excerpt);
