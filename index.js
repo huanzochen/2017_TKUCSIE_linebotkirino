@@ -811,6 +811,8 @@ function Workjiebanext(event,ans){
 		for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
     		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
     			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){
+    				console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
+    				console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
 	    			if(topwordsact < 10){  //先從陣列中存入值
 	    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
 	        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
