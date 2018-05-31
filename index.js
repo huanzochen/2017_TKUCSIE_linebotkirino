@@ -779,22 +779,21 @@ function Workjieba(event,ans){
 	ansfind = 0;
 	ansc2num = 0;
     console.log('ans:'+ans+'ans的長度:'+ans.length);
-
-        for(var ansc = 0;ansc<ans.length;ansc++){
-        	for(var ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
-	        	if(ans[ansc] == Fjson[ansc2][0].topic){
-	        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[anc2]);
-	        		ansfind+=1;
-	        		ansc2num+=1;
-	        		console.log('ansc2:'+ansc2);
-	        	}
-	        	else{}	
+    for(ansc = 0;ansc<ans.length;ansc++){
+    	for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+        	if(ans[ansc] == Fjson[ansc2][0].topic){
+        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[anc2]);
+        		ansfind+=1;
+        		console.log('ansc2:'+ansc2);
         	}
-        	Workjiebanext(event,ans);
-        }
-        //Ktv = (Fjson[13][0].topic);
-        //Ktv2 = (Fjson[13][0].topic_weight);
-        //console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
+        	else{}
+        	ansc2num+=1;
+    	}
+    	Workjiebanext(event,ans);
+    }
+    //Ktv = (Fjson[13][0].topic);
+    //Ktv2 = (Fjson[13][0].topic_weight);
+    //console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
 }
 function Workjiebanext(event,ans){
 	anscnum+=1;  //計算迴圈的次數
