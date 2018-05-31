@@ -794,7 +794,7 @@ function Workjieba(event,ans){
     		}
         	ansc2num+=1;
     	}
-    	Workjiebanext(event,ans);
+    	Workjiebanext(event,ans,ans.length);
     }
     //Ktv = (Fjson[13][0].topic);
     //Ktv2 = (Fjson[13][0].topic_weight);
@@ -804,39 +804,181 @@ function Workjieba(event,ans){
 var topwords = ['0','0','0','0','0','0','0','0','0','0'];
 var topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
 var topwordsact = 0;
-function Workjiebanext(event,ans){
-	if(ansfind>=1){}
-	else if(ansfind==0&&ansc2num>=15){
-	ansc2num = 0;
-	ansc3num = 0;
-	topwords = ['0','0','0','0','0','0','0','0','0','0'];
-	topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
-	topwordsact = 0;
-		for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
-    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
-    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
-    				//console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
-    				//console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
-	    			if(topwordsact < 10){  //找出最大的十個數字
-	    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
-	        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
-	        			topwordsact++;
-	    			}
-	    			else if(topwordsact >=10){ //接著進來的開始比大小
-	    				for(var ansc4=0;ansc4<topwords.length;ansc4++){  //只要進來的比較大就替換掉
-	    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
-	    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
-	    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
-	    						break;
-	    					}
-	    				}
-	    			}
-        		}
-        	ansc3num+=1;
-    		}
-        	ansc2num+=1;
-        	Topwordssort(event);
-    	}
+function Workjiebanext(event,ans,anslen){
+	if(anslen==1){
+		if(ansfind>=1){}
+		else if(ansfind==0&&ansc2num>=15){
+		ansc2num = 0;
+		ansc3num = 0;
+		topwords = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordsact = 0;
+			for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+	    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
+	    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
+	    				//console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
+	    				//console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
+		    			if(topwordsact < 10){  //找出最大的十個數字
+		    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
+		        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
+		        			topwordsact++;
+		    			}
+		    			else if(topwordsact >=10){ //接著進來的開始比大小
+		    				for(var ansc4=0;ansc4<topwords.length;ansc4++){  //只要進來的比較大就替換掉
+		    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
+		    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
+		    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
+		    						break;
+		    					}
+		    				}
+		    			}
+	        		}
+	        	ansc3num+=1;
+	    		}
+	        	ansc2num+=1;
+	        	Topwordssort(event);
+	    	}
+		}
+	}
+	else if(anslen==2){
+		if(ansfind>=1){}
+		else if(ansfind==0&&ansc2num>=30){
+		ansc2num = 0;
+		ansc3num = 0;
+		topwords = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordsact = 0;
+			for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+	    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
+	    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
+	    				//console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
+	    				//console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
+		    			if(topwordsact < 10){  //找出最大的十個數字
+		    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
+		        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
+		        			topwordsact++;
+		    			}
+		    			else if(topwordsact >=10){ //接著進來的開始比大小
+		    				for(var ansc4=0;ansc4<topwords.length;ansc4++){  //只要進來的比較大就替換掉
+		    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
+		    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
+		    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
+		    						break;
+		    					}
+		    				}
+		    			}
+	        		}
+	        	ansc3num+=1;
+	    		}
+	        	ansc2num+=1;
+	        	Topwordssort(event);
+	    	}
+		}
+	}
+	else if(anslen==3){
+		if(ansfind>=1){}
+		else if(ansfind==0&&ansc2num>=45){
+		ansc2num = 0;
+		ansc3num = 0;
+		topwords = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordsact = 0;
+			for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+	    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
+	    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
+	    				//console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
+	    				//console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
+		    			if(topwordsact < 10){  //找出最大的十個數字
+		    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
+		        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
+		        			topwordsact++;
+		    			}
+		    			else if(topwordsact >=10){ //接著進來的開始比大小
+		    				for(var ansc4=0;ansc4<topwords.length;ansc4++){  //只要進來的比較大就替換掉
+		    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
+		    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
+		    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
+		    						break;
+		    					}
+		    				}
+		    			}
+	        		}
+	        	ansc3num+=1;
+	    		}
+	        	ansc2num+=1;
+	        	Topwordssort(event);
+	    	}
+		}
+	}
+	else if(anslen==4){
+		if(ansfind>=1){}
+		else if(ansfind==0&&ansc2num>=60){
+		ansc2num = 0;
+		ansc3num = 0;
+		topwords = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordsact = 0;
+			for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+	    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
+	    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
+	    				//console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
+	    				//console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
+		    			if(topwordsact < 10){  //找出最大的十個數字
+		    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
+		        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
+		        			topwordsact++;
+		    			}
+		    			else if(topwordsact >=10){ //接著進來的開始比大小
+		    				for(var ansc4=0;ansc4<topwords.length;ansc4++){  //只要進來的比較大就替換掉
+		    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
+		    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
+		    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
+		    						break;
+		    					}
+		    				}
+		    			}
+	        		}
+	        	ansc3num+=1;
+	    		}
+	        	ansc2num+=1;
+	        	Topwordssort(event);
+	    	}
+		}
+	}
+	else if(anslen==5){
+		if(ansfind>=1){}
+		else if(ansfind==0&&ansc2num>=75){
+		ansc2num = 0;
+		ansc3num = 0;
+		topwords = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
+		topwordsact = 0;
+			for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+	    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
+	    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
+	    				//console.log('Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]'+Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]);
+	    				//console.log('Fjson[ansc2][0].topic[ansc3]'+Fjson[ansc2][0].topic[ansc3]);
+		    			if(topwordsact < 10){  //找出最大的十個數字
+		    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
+		        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
+		        			topwordsact++;
+		    			}
+		    			else if(topwordsact >=10){ //接著進來的開始比大小
+		    				for(var ansc4=0;ansc4<topwords.length;ansc4++){  //只要進來的比較大就替換掉
+		    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
+		    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
+		    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
+		    						break;
+		    					}
+		    				}
+		    			}
+	        		}
+	        	ansc3num+=1;
+	    		}
+	        	ansc2num+=1;
+	        	Topwordssort(event);
+	    	}
+		}
 	}
 }
 var topwordsortnum = 0;
