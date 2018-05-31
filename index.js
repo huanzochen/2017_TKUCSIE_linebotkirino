@@ -774,9 +774,9 @@ function Workjieba(event,ans){
     event.reply(ans);
     console.log('ans的長度:'+ans.length);
 
-        Kfood = (Fjson[0][0].topic[0]);
-        Kfood2 = (Fjson[0][0].topic);
-        console.log('Kfood:'+Kfood+'Kfood2 :'+Kfood2);    
+        Ktv = (Fjson[13][0].topic);
+        Ktv2 = (Fjson[13][0].topic_weight);
+        console.log('topic:'+Ktv+'topic_weight :'+Ktv2);    
 }
 
 function Worksub(event){
