@@ -773,9 +773,11 @@ bot.on('message', function (event) {
 
 var ansfind = 0;
 var anscnum = 0;
+var ansc2num = 0;
 function Workjieba(event,ans){
 	anscnum = 0;
 	ansfind = 0;
+	ansc2num = 0;
     console.log('ans:'+ans+'ans的長度:'+ans.length);
 
         for(var ansc = 0;ansc<ans.length;ansc++){
@@ -783,7 +785,9 @@ function Workjieba(event,ans){
 	        	if(ans[ansc] == Fjson[ansc2][0].topic){
 	        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[anc2]);
 	        		ansfind+=1;
-	        	} 
+	        		ansc2num+=1;
+	        		console.log('ansc2:'+ansc2);
+	        	}
 	        	else{}	
         	}
         	Workjiebanext(event,ans);
@@ -797,7 +801,7 @@ function Workjiebanext(event,ans){
 	if(ansfind>=1){
 
 	}
-	else if(ansfind==0&&anscnum==3){
+	else if(ansfind==0&&anscnum==3&&ansc2num=45){
 		event.reply('很抱歉，我們並沒有找到相關的字詞');
 	}
 }
