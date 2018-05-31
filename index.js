@@ -801,7 +801,7 @@ function Workjiebanext(event,ans){
 	if(ansfind>=1){
 
 	}
-	else if(ansfind==0&&anscnum==3&&ansc2num=45){
+	else if(ansfind==0&&anscnum==3&&ansc2num==45){
 		event.reply('很抱歉，我們並沒有找到相關的字詞');
 	}
 }
