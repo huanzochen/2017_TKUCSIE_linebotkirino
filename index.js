@@ -774,8 +774,7 @@ bot.on('message', function (event) {
 var ansfind = 0;
 var anscnum = 0;
 function Workjieba(event,ans){
-    event.reply(ans);
-    console.log('ans的長度:'+ans.length);
+    console.log('ans:'+ans+'ans的長度:'+ans.length);
 
         for(var ansc = 0;ansc<ans.length;ansc++){
         	for(var ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
