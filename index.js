@@ -784,6 +784,7 @@ function Workjieba(event,ans){
     for(var ansc = 0;ansc<ans.length;ansc++){ //ans的長度
     	console.log('進入ansc');
     	for(var ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+    		console.log('進入ansc2');
     		for(var ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic總數
     			if(ans[ansc] == Fjson[ansc2][0].topic[ansc3]){
 	        		event.reply('我們找到了關於'+ans[ansc]+'的文章如下：\n'+replytheme[ansc2][0]);
