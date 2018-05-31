@@ -410,19 +410,19 @@ bot.on('message', function (event) {
 						actions: [{
 							type: 'message',
 							label: '美食',
-							text: '美食新聞'
+							text: '美食'
 						}, {
 							type: 'message',
 							label: '購物',
-							text: '購物新聞'
+							text: '購物'
 						}, {
 							type: 'message',
 							label: '旅遊',
-							text: '旅遊新聞'
+							text: '旅遊'
 						}, {
 							type: 'message',
 							label: '美妝',
-							text: '美妝新聞'
+							text: '美妝'
 						}]
 						}
 					}]);
@@ -439,19 +439,19 @@ bot.on('message', function (event) {
 						actions: [{
 							type: 'message',
 							label: '科技',
-							text: '科技新聞'
+							text: '科技'
 						}, {
 							type: 'message',
 							label: '汽車',
-							text: '汽車新聞'
+							text: '汽車'
 						}, {
 							type: 'message',
 							label: '金融',
-							text: '金融新聞'
+							text: '金融'
 						}, {
 							type: 'message',
 							label: '運動',
-							text: '運動新聞'
+							text: '運動'
 						}]
 						}
 					}]);
@@ -468,19 +468,19 @@ bot.on('message', function (event) {
 						actions: [{
 							type: 'message',
 							label: '綜藝',
-							text: '綜藝新聞'
+							text: '綜藝'
 						}, {
 							type: 'message',
 							label: '動漫',
-							text: '動漫新聞'
+							text: '動漫'
 						}, {
 							type: 'message',
 							label: '遊戲',
-							text: '遊戲新聞'
+							text: '遊戲'
 						}, {
 							type: 'message',
 							label: '電影',
-							text: '電影新聞'
+							text: '電影'
 						}]
 						}
 					}]);
@@ -559,12 +559,12 @@ bot.on('message', function (event) {
                       }
                     });
 					break;
-                case '美食新聞':
+                case '美食':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[0]);
                     console.log('xxx'+replytheme[0]);
                     break;
-                case '美妝新聞':
+                case '美妝':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[1]);
                     console.log('xxx'+replytheme[1]);
@@ -574,17 +574,17 @@ bot.on('message', function (event) {
                     event.reply(replytheme[3]);
                     console.log('xxx'+replytheme[3]);
                     break;
-                case '購物新聞':
+                case '購物':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[2]);
                     console.log('xxx'+replytheme[2]);
                     break;
-                case '科技新聞':
+                case '科技':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[4]);
                     console.log('xxx'+replytheme[4]);
                     break;
-                case '動漫新聞':
+                case '動漫':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[5]);
                     console.log('xxx'+replytheme[5]);
@@ -594,12 +594,12 @@ bot.on('message', function (event) {
                     event.reply(replytheme[6]);
                     console.log('xxx'+replytheme[6]);
                     break;
-                case '金融新聞':
+                case '金融':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[7]);
                     console.log('xxx'+replytheme[7]);
                     break;
-                case '遊戲新聞':
+                case '遊戲':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[8]);
                     console.log('xxx'+replytheme[8]);
@@ -609,28 +609,28 @@ bot.on('message', function (event) {
                     event.reply(replytheme[9]);
                     console.log('xxx'+replytheme[9]);
                     break;
-                case '電影新聞':
+                case '電影':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[10]);
                     console.log('xxx'+replytheme[10]);
                     break;
-                case '運動新聞':
+                case '運動':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[11]);
                     console.log('xxx'+replytheme[11]);
                     break;
-                case '旅遊新聞':
+                case '旅遊':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[12]);
                     console.log('xxx'+replytheme[12]);
                     break;
-                case '綜藝新聞':
+                case '綜藝':
                     //event.reply(json[0].Summary[0].excerpt);
                         event.reply(replytheme[13]);
                         console.log('xxx'+replytheme[13]);
                     
                     break;
-                case '汽車新聞':
+                case '汽車':
                     //event.reply(json[0].Summary[0].excerpt);
                     event.reply(replytheme[14]);
                     console.log('xxx'+replytheme[14]);
@@ -759,6 +759,9 @@ bot.on('message', function (event) {
 					previewImageUrl: 'https://example.com/preview.jpg'
 					});
 				break;
+				case '我要訂閱':
+					Worksub(event);
+				break;
 				default:
                     ans = nodejieba.cutHMM(event.message.text);
                     Workjieba(event,ans);
@@ -777,29 +780,14 @@ function Workjieba(event,ans){
 
         Kfood = (Fjson[0][0].topic[0]);
         Kfood2 = (Fjson[0][0].topic);
-        console.log('Kfood:'+Kfood+'Kfood2 :'+Kfood2);
+        console.log('Kfood:'+Kfood+'Kfood2 :'+Kfood2);    
+}
 
-    /*
-    var Kfood = new Array;
-    var Kmakeup = new Array;
-    var Kbuyonline = new Array;
-    var Ktalk = new Array;
-    var K3c = new Array;
-    var Kanimate = new Array;
-    var Kboy = new Array;
-    var Kfinance = new Array;
-    var Kgame = new Array;
-    var Kgirl = new Array;
-    var Kmovie = new Array;
-    var Ksport = new Array;
-    var Ktravel = new Array;
-    var Ktvepisode = new Array;
-    var Kvehicle = new Array;
-    */
-    
-    
-    
-    
+function Worksub(event){
+	event.source.profile().then(function (profile) {
+        Uidappend(profile.userId);
+        return event.reply('感謝你的訂閱!');
+    });
 }
 
 app.listen(process.env.PORT || 80, function () {
