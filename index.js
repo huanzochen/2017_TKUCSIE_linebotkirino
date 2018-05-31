@@ -152,7 +152,7 @@ function Gettime(){
         var today=new Date();
         var Fmonth,Fdate,Fhours,Fminutes;
         today.setHours(today.getHours() + 8);
-        today.setMinutes(today.getMinutes() - 10);
+        today.setMinutes(today.getMinutes() - 20);
             if((today.getMonth()+1)<10){
                 Fmonth = '0'+(today.getMonth()+1);
             }
@@ -771,10 +771,6 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    event.source.profile().then(function (profile) {
-        Uidappend(profile.userId);
-        return event.reply('Hello ' + profile.displayName + ' ' + profile.userId);
-    });
     //event.reply(ans);
     console.log('ans的長度:'+ans.length);
 
