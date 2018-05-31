@@ -867,7 +867,7 @@ function Topwordsprint(event){
 	topwordsortnum++;
 	if(topwordsortnum==9){
 		for(var asd3 = 0;asd3<9;asd3++){
-
+			console.log('GG');
 		}
 	}
 }
