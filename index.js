@@ -847,25 +847,20 @@ function Topwordssort(event){ //排序前十字詞利用自製排序法排序
 	var buffsum =0;
 	topwordsortnum = 0;
 	if(ansc2num==15){
-		for(var asd3 = 0;asd3<10;asd3++){
-			console.log('asd3'+topwords[asd3]+' asd3'+topwordssum[asd3]);
-		}
-		/*
 		for(var asd1 = 0;asd1<9;asd1++){
 			for(var asd2 = 0;asd2<9;asd2++){
 				if(topwordssum[asd2]<topwordssum[(asd2+1)]){
-					topwordssum[asd2] = buffsum;
+					buffsum = topwordssum[asd2];
 					topwordssum[asd2] = topwordssum[(asd2+1)];
-					buffsum = topwordssum[(asd2+1)];
-					topwords[asd2] = buff;
+					topwordssum[(asd2+1)] = buffsum;
+					buff = topwords[asd2];
 					topwords[asd2] = topwords[(asd2+1)];
-					buff = topwords[asd2+1];
+					topwords[asd2+1] = buff; 
 				}
 			}
 	    	Topwordsprint(event);
 	    	console.log('asd1'+topwords[asd1]+' asd1'+topwordssum[asd1]);
 	    } 
-	    */
 	}
 }
 function Topwordsprint(event){
