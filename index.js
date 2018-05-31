@@ -774,6 +774,8 @@ bot.on('message', function (event) {
 var ansfind = 0;
 var anscnum = 0;
 function Workjieba(event,ans){
+	anscnum = 0;
+	ansfind = 0;
     console.log('ans:'+ans+'ans的長度:'+ans.length);
 
         for(var ansc = 0;ansc<ans.length;ansc++){
