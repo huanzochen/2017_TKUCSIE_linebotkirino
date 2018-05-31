@@ -810,6 +810,8 @@ function Workjiebanext(event,ans){
 	else if(ansfind==0&&anscnum==3&&ansc2num==45){
 	ansc2num = 0;
 	ansc3num = 0;
+	topwords = ['0','0','0','0','0','0','0','0','0','0'];
+	topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
 		for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
     		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
     			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){ //將前十個值存到陣列裡面,稍後排序
@@ -864,7 +866,7 @@ function Topwordsprint(event){
 	topwordsortnum++;
 	if(topwordsortnum==9){
 		var topwordprintreply = '';
-		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n'+'topwords[0]\n'+'topwords[1]\n'+'topwords[2]\n'+'topwords[3]\n'+'topwords[3]\n'+'topwords[4]\n'+'topwords[5]\n'+'topwords[6]\n'+'topwords[7]\n'+'topwords[8]\n'+'topwords[9]\n');
+		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n'+topwords[0]+'\n'+topwords[1]+'\n'+topwords[2]+'\n'+topwords[3]+'\n'+topwords[4]+'\n'+topwords[5]+'\n'+topwords[6]+'\n'+topwords[7]+'\n'+topwords[8]+'\n'+topwords[9]+'\n');
 		/*
 		for(var asd3 = 0;asd3<9;asd3++){
 			console.log('asd3'+topwords[asd3]+' asd3'+topwordssum[asd3]);
