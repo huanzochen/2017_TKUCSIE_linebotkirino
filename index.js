@@ -835,18 +835,14 @@ function Workjiebanext(event,ans){
         	ansc2num+=1;
         	Topwordssort(event);
     	}
-
-    	
-
-		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n');
 	}
 }
 var topwordsortnum = 0;
 function Topwordssort(event){ //排序前十字詞利用自製排序法排序
 	var buff =0;
 	var buffsum =0;
-	topwordsortnum = 0;
 	if(ansc2num==15){
+	topwordsortnum = 0;
 		for(var asd1 = 0;asd1<9;asd1++){
 			for(var asd2 = 0;asd2<9;asd2++){
 				if(topwordssum[asd2]<topwordssum[(asd2+1)]){
@@ -863,12 +859,17 @@ function Topwordssort(event){ //排序前十字詞利用自製排序法排序
 	    } 
 	}
 }
+
 function Topwordsprint(event){
 	topwordsortnum++;
 	if(topwordsortnum==9){
+		var topwordprintreply = '';
+		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n'+'topwords[0]\n'+'topwords[1]\n'+'topwords[2]\n'+'topwords[3]\n'+'topwords[3]\n'+'topwords[4]\n'+'topwords[5]\n'+'topwords[6]\n'+'topwords[7]\n'+'topwords[8]\n'+'topwords[9]\n');
+		/*
 		for(var asd3 = 0;asd3<9;asd3++){
 			console.log('asd3'+topwords[asd3]+' asd3'+topwordssum[asd3]);
 		}
+		*/
 	}
 }
 
