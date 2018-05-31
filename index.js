@@ -768,8 +768,11 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    Uidappend(profile.userId);
-    event.reply(ans);
+    event.source.profile().then(function (profile) {
+        Uidappend(profile.userId);
+        return event.reply('Hello ' + profile.displayName + ' ' + profile.userId);
+    });
+    //event.reply(ans);
     console.log('ans的長度:'+ans.length);
 
         Kfood = (Fjson[0][0].topic[0]);
