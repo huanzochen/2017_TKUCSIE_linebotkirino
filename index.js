@@ -777,7 +777,7 @@ function Workjieba(event,ans){
 
         Kfood = (Fjson[0][0].topic[0]);
         Kfood2 = (Fjson[0][0].topic);
-        console.log('Kfood:'+Kfood+'Kfood2:'+Kfood2);
+        console.log('Kfood:'+Kfood+'Kfood2 :'+Kfood2);
 
     /*
     var Kfood = new Array;
