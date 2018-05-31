@@ -866,7 +866,7 @@ function Topwordsprint(event){
 	topwordsortnum++;
 	if(topwordsortnum==9){
 		var topwordprintreply = '';
-		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n'+topwords[0]+'\n'+topwords[1]+'\n'+topwords[2]+'\n'+topwords[3]+'\n'+topwords[4]+'\n'+topwords[5]+'\n'+topwords[6]+'\n'+topwords[7]+'\n'+topwords[8]+'\n'+topwords[9]+'\n');
+		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n'+topwords[0]+'\n'+topwords[1]+'\n'+topwords[2]+'\n'+topwords[3]+'\n'+topwords[4]+'\n'+topwords[5]+'\n'+topwords[6]+'\n'+topwords[7]+'\n'+topwords[8]+'\n'+topwords[9]);
 		/*
 		for(var asd3 = 0;asd3<9;asd3++){
 			console.log('asd3'+topwords[asd3]+' asd3'+topwordssum[asd3]);
