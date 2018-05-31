@@ -801,8 +801,8 @@ function Workjieba(event,ans){
     //console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
 }
 
-var topwords = ['0','0','0','0','0','0','0','0','0','0',];
-var topwordssum = ['0','0','0','0','0','0','0','0','0','0',];
+var topwords = ['0','0','0','0','0','0','0','0','0','0'];
+var topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
 var topwordsact = 0;
 function Workjiebanext(event,ans){
 	anscnum+=1;  //計算迴圈的次數
