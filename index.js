@@ -776,7 +776,7 @@ function Workjieba(event,ans){
 
         Ktv = (Fjson[13][0].topic);
         Ktv2 = (Fjson[13][0].topic_weight);
-        console.log('topic:'+Ktv+'topic_weight :'+Ktv2);    
+        console.log('topic:'+Ktv+'topic_weight :'+Ktv2.Ktv);    
 }
 
 function Worksub(event){
