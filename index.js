@@ -859,6 +859,7 @@ function Topwordssort(event){ //排序前十字詞利用自製排序法排序
 				}
 			}
 	    	Topwordsprint(event);
+	    	console.log('asd3'+topwords[asd1]+' asd3'+topwordssum[asd1]);
 	    } 
 	}
 }
@@ -866,7 +867,7 @@ function Topwordsprint(event){
 	topwordsortnum++;
 	if(topwordsortnum==9){
 		for(var asd3 = 0;asd3<9;asd3++){
-			console.log('asd3'+topwords[asd3]+' asd3'+topwordssum[asd3]);
+
 		}
 	}
 }
