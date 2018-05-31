@@ -772,11 +772,9 @@ bot.on('message', function (event) {
 });
 
 var ansfind = 0;
-var anscnum = 0;
 var ansc2num = 0;
 var ansc3num = 0;
 function Workjieba(event,ans){
-	anscnum = 0;
 	ansfind = 0;
 	ansc2num = 0;
 	ansc3num = 0;
@@ -807,7 +805,6 @@ var topwords = ['0','0','0','0','0','0','0','0','0','0'];
 var topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
 var topwordsact = 0;
 function Workjiebanext(event,ans){
-	anscnum+=1;  //計算迴圈的次數
 	if(ansfind>=1){}
 	else if(ansfind==0&&ansc2num==45){
 	ansc2num = 0;
