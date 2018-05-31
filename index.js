@@ -771,7 +771,7 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
-    //event.reply(ans);
+    event.reply(ans);
     console.log('ans的長度:'+ans.length);
 
         Kfood = (Fjson[0][0].topic[0]);
