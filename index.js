@@ -842,7 +842,7 @@ function Workjiebanext(event,ans){
 	}
 }
 function Topwordsprint(event){
-	if(ansc2num==15;){
+	if(ansc2num==15){
 		for(var asd = 0;asd<10;asd++){
 	    		console.log('asd'+topwords[asd]+' asdd'+topwordssum[asd]);
 	    }
