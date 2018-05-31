@@ -56,7 +56,8 @@ var j = schedule.scheduleJob(rule, function(){
     });
     replytheme=['','','','','','','','','','','','','','',''];
     thmct = 0;
-    Filename = Gettime();
+    //Filename = Gettime();
+    Filename = '201805302120';
     Messuparray();
     console.log('rd:'+rd);
 });
@@ -776,7 +777,7 @@ function Workjieba(event,ans){
 
         Ktv = (Fjson[13][0].topic);
         Ktv2 = (Fjson[13][0].topic_weight);
-        console.log('topic:'+Ktv+'topic_weight :'+Ktv2.Ktv);    
+        console.log('topic:'+Ktv+'topic_weight :'+Ktv2.Ktv[0]);    
 }
 
 function Worksub(event){
