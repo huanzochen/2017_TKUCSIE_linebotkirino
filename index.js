@@ -771,14 +771,37 @@ bot.on('message', function (event) {
 	}
 });
 
+var ansfind = 0;
+var anscnum = 0;
 function Workjieba(event,ans){
     event.reply(ans);
     console.log('ans的長度:'+ans.length);
 
-        Ktv = (Fjson[13][0].topic);
-        Ktv2 = (Fjson[13][0].topic_weight);
-        console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
+        for(var ansc = 0;ansc<ans.length;ansc++){
+        	for(var ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+	        	if(ans[ansc] == Fjson[ansc2][0].topic){
+	        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[anc2]);
+	        		ansfind+=1;
+	        	} 
+	        	else{}	
+        	}
+        	Workjiebanext(event,ans);
+        }
+        //Ktv = (Fjson[13][0].topic);
+        //Ktv2 = (Fjson[13][0].topic_weight);
+        //console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
 }
+function Workjiebanext(event,ans){
+	anscnum+=1;  //計算迴圈的次數
+	if(ansfind>=1){
+
+	}
+	else if(ansfind==0&&anscnum==3){
+		event.reply('很抱歉，我們並沒有找到相關的字詞');
+	}
+}
+
+
 
 function Worksub(event){
 	event.source.profile().then(function (profile) {
