@@ -806,7 +806,7 @@ var topwordssum = ['0','0','0','0','0','0','0','0','0','0'];
 var topwordsact = 0;
 function Workjiebanext(event,ans){
 	if(ansfind>=1){}
-	else if(ansfind==0&&ansc2num==45){
+	else if(ansfind==0&&ansc2num>=15){
 	ansc2num = 0;
 	ansc3num = 0;
 	topwords = ['0','0','0','0','0','0','0','0','0','0'];
