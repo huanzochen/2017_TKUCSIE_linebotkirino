@@ -3,6 +3,8 @@ const express = require('express');
 var schedule = require('node-schedule');
 const rp = require('request-promise');
 const nodejieba = require('nodejieba');
+const fs = require('fs');
+const readline = require('readline');
 //var rp = require('request-promise');
 
 const bot = linebot({
@@ -13,7 +15,8 @@ const bot = linebot({
 
 const app = express();
 const linebotParser = bot.parser();
-const users = ['U2d55a16eef4b016fca5636960bf50d15','XXXXXXXXXXXX'];
+var huanzo = 'U2d55a16eef4b016fca5636960bf50d15';
+var users = [];
 
 var makeupjson = [];
 var replytext = ['食物','美妝','購物','閒聊','科技','動漫','男生','經濟','遊戲','女生','電影','運動','旅遊','綜藝','汽車'];
@@ -40,6 +43,7 @@ var Filename = [];
 //nodejieba.load({userDict:'./dict.utf8'})
 //Filename = Gettime();
 Filename = '201805302120';
+Uidcreate();
 Messuparray();
 
 var rule = new schedule.RecurrenceRule();  
@@ -69,6 +73,71 @@ var j = schedule.scheduleJob('5 * * * *', function(){
     console.log('rd:'+rd);
 });
 */
+
+function Uidcreate(){
+    fs.open('./useruid.txt', 'a', function(err, fd){
+        if(err)
+            console.log(err);
+        else
+            console.log('Write operation complete.');
+        fs.appendFile('./useruid.txt', huanzo+'\n', function (err) {
+        if (err)
+            console.log(err);
+        else
+            console.log('Append operation complete.');
+        });
+        fs.close(fd, function (err) {
+            if (err) throw err;
+        });
+    });
+    
+}
+
+function Uidappend(lineuid){
+    fs.appendFile('./useruid.txt', lineuid+'\n', function (err) {
+        if (err)
+            console.log(err);
+        else
+            console.log('Append operation complete.');
+    });
+}
+
+function Arrayout(){
+        for(var k  = 0;k<users.length;k++){
+            console.log(users[k]);
+        }
+}
+
+function Uidread(){
+    fs.stat('./useruid.txt', function(err, stat) {
+        if(stat&&stat.isFile()){
+        fs.open('./useruid.txt', 'r', function(err, fd){
+            //创建一个与文件大小相同的缓冲区
+            var readBuffer = new Buffer(stat.size);
+            var len = stat.size;
+            var offset = 0;
+            var filePostion = 0;
+            fs.read(fd, readBuffer, offset, len, filePostion, function(err, readByte, readResult){
+                //文件内容
+                    console.log('字數總共是:'+readByte);
+                    var text = readResult.toString();
+                    const rl = readline.createInterface({
+                        input: fs.createReadStream('./useruid.txt'),
+                        crlfDelay: Infinity
+                    });
+                    rl.on('line', (line) => {
+                        users.push(line);
+                        console.log('users的長度:'+users.length);
+                    }).on('close', () => {
+                        console.log('完成!');
+                        Arrayout();
+                    });;
+                }); 
+        });
+         }
+    });
+}
+
 
 function Messuparray(){
     replytheme=new Array(15);
@@ -171,9 +240,6 @@ function Getjson(thmct){
             console.log(err);
             console.log('出錯了'+theme[thmct]);
         });
-
-        
-    
 }
 
 
@@ -701,6 +767,7 @@ bot.on('message', function (event) {
 });
 
 function Workjieba(event,ans){
+    Uidappend(profile.userId);
     event.reply(ans);
     console.log('ans的長度:'+ans.length);
 
