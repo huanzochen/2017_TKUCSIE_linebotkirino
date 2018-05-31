@@ -48,18 +48,23 @@ Messuparray();
 
 var rule = new schedule.RecurrenceRule();  
 rule.minute = [0,10,20,30,40,50];
-var j = schedule.scheduleJob(rule, function(){  
-    var rd = Math.floor(Math.random()*15);
-    bot.push(users, {
-        type: 'text',
-        text: replytext[rd]+'\n'+replytheme[rd]
-    });
+var j = schedule.scheduleJob(rule, function(){
     replytheme=['','','','','','','','','','','','','','',''];
     thmct = 0;
     Filename = Gettime();
     //Filename = '201805302120';
     Messuparray();
     console.log('rd:'+rd);
+});
+
+var rule2 = new schedule.RecurrenceRule();
+rule2.minute = [0,30];
+var j2 = schedule.scheduleJob(rule2, function(){
+var rd = Math.floor(Math.random()*15);
+    bot.push(users, {
+        type: 'text',
+        text: replytext[rd]+'\n'+replytheme[rd]
+    });
 });
 /**
 var j = schedule.scheduleJob('5 * * * *', function(){
@@ -1019,7 +1024,7 @@ function Topwordsprint(event){
 function Worksub(event){ 
 	event.source.profile().then(function (profile) {
         Uidappend(profile.userId);
-        return event.reply('感謝你的訂閱!');
+        return event.reply('感謝你的訂閱！\n文章將會每30分鐘發送給您~\n如果覺得很吵的話，可以關閉提醒噢：D');
     });
 }
 
