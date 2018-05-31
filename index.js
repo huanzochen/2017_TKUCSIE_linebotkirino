@@ -99,6 +99,7 @@ function Uidappend(lineuid){
             console.log(err);
         else
             console.log('Append operation complete.');
+            Uidread();
     });
 }
 
