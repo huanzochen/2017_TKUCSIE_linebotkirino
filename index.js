@@ -801,8 +801,8 @@ function Workjieba(event,ans){
     //console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
 }
 
-var topwords = new Array(10);
-var topwordssum = new Array(10);
+var topwords = ['0','0','0','0','0','0','0','0','0','0',];
+var topwordssum = ['0','0','0','0','0','0','0','0','0','0',];
 var topwordsact = 0;
 function Workjiebanext(event,ans){
 	anscnum+=1;  //計算迴圈的次數
@@ -841,7 +841,7 @@ function Workjiebanext(event,ans){
 		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n');
 	}
 }
-function Topwordsprint(event){
+function Topwordsprint(event){ //列出前十字詞
 	if(ansc2num==15){
 		for(var asd = 0;asd<10;asd++){
 	    		console.log('asd'+topwords[asd]+' asdd'+topwordssum[asd]);
@@ -849,7 +849,7 @@ function Topwordsprint(event){
 	}
 }
 
-function Worksub(event){
+function Worksub(event){ 
 	event.source.profile().then(function (profile) {
         Uidappend(profile.userId);
         return event.reply('感謝你的訂閱!');
