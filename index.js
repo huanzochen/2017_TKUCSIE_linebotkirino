@@ -785,7 +785,7 @@ function Workjieba(event,ans){
     	for(var ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
     		for(var ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic總數
     			if(ans[ansc] == Fjson[ansc2][0].topic[ansc3]){
-	        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[anc2]);
+	        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[ansc2]);
 	        		ansfind+=1;
 	        		console.log('ansc3:'+ansc3);
         		}
