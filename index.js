@@ -809,7 +809,7 @@ var topwordsact = 0;
 function Workjiebanext(event,ans){
 	anscnum+=1;  //計算迴圈的次數
 	if(ansfind>=1){}
-	else if(ansfind==0&&anscnum==3&&ansc2num==45){
+	else if(ansfind==0&&ansc2num==45){
 	ansc2num = 0;
 	ansc3num = 0;
 	topwords = ['0','0','0','0','0','0','0','0','0','0'];
