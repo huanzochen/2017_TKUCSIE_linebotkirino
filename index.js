@@ -785,7 +785,7 @@ function Workjieba(event,ans){
     	for(var ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
     		for(var ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic總數
     			if(ans[ansc] == Fjson[ansc2][0].topic[ansc3]){
-	        		event.reply('我們找到了關於此關鍵字的文章\n'+replytheme[ansc2][0]);
+	        		event.reply('我們找到了關於'+ans[ansc]+'的文章如下：\n'+replytheme[ansc2][0]);
 	        		ansfind+=1;
 	        		console.log('ansc3:'+ansc3);
         		}
@@ -800,17 +800,43 @@ function Workjieba(event,ans){
     //Ktv2 = (Fjson[13][0].topic_weight);
     //console.log('topic:'+Ktv+'topic_weight :'+Ktv2["演員"]);    
 }
+
+var topwords = new Array(10);
+var topwordssum = new Array(10);
+var topwordsact = 0;
 function Workjiebanext(event,ans){
 	anscnum+=1;  //計算迴圈的次數
-	if(ansfind>=1){
-
-	}
+	if(ansfind>=1){}
 	else if(ansfind==0&&anscnum==3&&ansc2num==45){
-		event.reply('很抱歉，我們並沒有找到相關的字詞');
+		for(ansc2 = 0;ansc2<15;ansc2++){ //比對15個主題
+    		for(ansc3 = 0;ansc3<(Fjson[ansc2][0].topic.length);ansc3++){  //主題中的topic遍歷
+    			if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[topwordsact]){
+	    			if(topwordsact < 10){  //先從陣列中存入值
+	    				topwords[topwordsact] = Fjson[ansc2][0].topic[ansc3];	
+	        			topwordssum[topwordsact] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]];
+	        			topwordsact++;
+	    			}
+	    			else if(topwordsact >=10){ //接著進來的開始比大小
+	    				for(var ansc4=0;ansc4=topwords.length;ansc4++){  //只要進來的比較大就替換掉
+	    					if(Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4]){
+	    						topwords[ansc4] = Fjson[ansc2][0].topic[ansc3];
+	    						topwordssum[ansc4] = Fjson[ansc2][0].topic_weight[Fjson[ansc2][0].topic[ansc3]]>topwordssum[ansc4];
+	    						break;
+	    					}
+	    				}
+	    			}
+        		}
+    		}
+        	ansc2num+=1;
+    	}
+
+    	for(var asd = 0;asd<10;asd++){
+    		console.log('asd'+topwords[asd]+' asdd'+topwordssum[asd]);
+    	}
+
+		event.reply('很抱歉，我們並沒有找到相關的文章：(\n'+'來看看大家現在都在聊什麼吧！\n'+'當前熱門關鍵字前十名：\n');
 	}
 }
-
-
 
 function Worksub(event){
 	event.source.profile().then(function (profile) {
