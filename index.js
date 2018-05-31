@@ -105,7 +105,7 @@ function Uidappend(lineuid){
 
 function Arrayout(){
         for(var k  = 0;k<users.length;k++){
-            console.log(users[k]);
+            console.log(users[k]+'玩家資料提取中');
         }
 }
 
