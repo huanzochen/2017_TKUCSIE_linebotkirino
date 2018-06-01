@@ -38,7 +38,7 @@ var replyvehicle = '';
 var replytheme=new Array(15);
 var Fjson = new Object;
 var theme = ['talk/Food','talk/Makeup','talk/buyonline','talk/Talk','talk/3c','talk/acg','talk/boy','talk/finance','talk/game','talk/girl','talk/movie','talk/sport','talk/travel','talk/tvepisode','talk/vehicle'];
-var thmct = 0
+var thmct = 0;
 var Filename = [];
 //nodejieba.load({userDict:'./dict.utf8'})
 //Filename = Gettime();
