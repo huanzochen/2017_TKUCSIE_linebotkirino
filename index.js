@@ -51,8 +51,8 @@ rule.minute = [0,10,20,30,40,50];
 var j = schedule.scheduleJob(rule, function(){
     replytheme=['','','','','','','','','','','','','','',''];
     thmct = 0;
-    Filename = Gettime();
-    //Filename = '201805302120';
+    //Filename = Gettime();
+    Filename = '201805302120';
     Messuparray();
 });
 
@@ -64,7 +64,7 @@ var rd = Math.floor(Math.random()*15);
         type: 'text',
         text: replytext[rd]+'\n'+replytheme[rd][0]
     });
-    console.log('rd:'+rd);
+    console.log('rd: '+rd);
 });
 /**
 var j = schedule.scheduleJob('5 * * * *', function(){
