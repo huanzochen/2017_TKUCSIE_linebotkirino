@@ -62,7 +62,7 @@ var j2 = schedule.scheduleJob(rule2, function(){
 var rd = Math.floor(Math.random()*15);
     bot.push(users, {
         type: 'text',
-        text: replytext[rd]+'\n'+replytheme[rd]
+        text: replytext[rd]+'\n'+replytheme[rd][0]
     });
     console.log('rd:'+rd);
 });
