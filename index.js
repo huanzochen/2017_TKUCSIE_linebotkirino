@@ -54,7 +54,6 @@ var j = schedule.scheduleJob(rule, function(){
     Filename = Gettime();
     //Filename = '201805302120';
     Messuparray();
-    console.log('rd:'+rd);
 });
 
 var rule2 = new schedule.RecurrenceRule();
@@ -65,6 +64,7 @@ var rd = Math.floor(Math.random()*15);
         type: 'text',
         text: replytext[rd]+'\n'+replytheme[rd]
     });
+    console.log('rd:'+rd);
 });
 /**
 var j = schedule.scheduleJob('5 * * * *', function(){
